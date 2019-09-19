@@ -1,0 +1,425 @@
+#banner{
+    background-image: url(img/pajaros.jpg);
+    height: 240px;
+    width: 100%;
+    margin-right: 0PX;
+}
+h5{
+    font-family: 'hb-icons';
+}
+.navegador{
+    background-color: black;
+    color: white;
+    height: 40px;
+}
+.cuerpo{
+    display: flex;
+    justify-content: center;
+
+}
+.cuerpodelformulario{
+    display: flex;
+    justify-content: center;
+
+}
+.contenido{
+    background-color: white;
+    width: 100%;
+    margin: 0px;
+}
+.contenido3{
+    background-color: black;
+    color: white;
+    width: 1360px;
+    margin-top:0px;
+    border: white solid;
+}
+
+
+.parrafo1{
+    margin-top:0px;
+
+}
+a{
+
+    text-decoration: none;
+    color: white;
+}
+a:hover{
+    color: lightblue;
+}
+li:hover{
+    font-size: 20px;
+}
+.linav:hover{
+    color: lightblue;
+}
+.nave{
+    text-decoration: none;
+    margin: 0;
+
+}
+.portada{
+    width: 1360px;
+    text-align: center;
+
+}
+.div-portada{
+    height: 500px;
+    overflow: hidden;
+}
+.linav{
+    display: inline-block;
+    margin: 10px;
+    font-size: 20px;
+}
+.datos{
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+}
+.inputmail{
+    width: 200px;
+}
+.td2{
+    text-align: center;
+}
+
+tr{
+    background-color: rgb(197, 223, 231);
+
+}
+
+form{
+    margin: 10px;
+}
+h2{
+    text-align: center;
+}
+#inputcaptcha{
+    margin-bottom: 30px;
+}
+.imagensudor{
+    width: 300px;
+    height: 280px;
+    display: flex;
+    justify-content: center;
+}
+.divcomienzodelcapcha{
+    border-top:solid white 2px;
+    margin-bottom: 2px;
+}
+.losbotones{
+    display: inline-block;
+}
+.formulario{
+    background-color: rgb(179, 179, 179);
+
+   flex-wrap: nowrap;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.comienzodelcapcha{
+
+    color: white;
+    font-size: 30px;
+}
+#myinput{
+    display: inline;
+
+}
+.Borradortp{
+    width: 1360px;
+    overflow: auto;
+}
+.captcha{
+    background-color: rgb(65, 0, 0);
+
+
+}
+
+
+button{
+    font-size: 20px;
+    color: white;
+    background-color: black;
+    border: none;
+}
+button:hover{
+    color: lightblue;
+}
+
+.tr1{
+    background-color: white;
+}
+.soyleyenda{
+    background: white;
+
+}
+.contenido2{
+    background-image: url(img/fondo.jpg);
+}
+.mega{
+    width:300px;
+    height:auto;
+    margin: none;
+    margin-left: 450px;
+
+}
+.bodytabla{
+    background-image: url(http://www.wallpaperk.com/wallpapers/textura-tablas-de-madera-7435.jpg);
+}
+.contenedorTabla{
+    background-color: white;
+    padding: 20px;
+    height: 700px;
+    overflow:scroll;
+    max-width: 1050px;
+}
+.parrafodescripcion{
+    height: 190px;
+}
+.trailer{
+
+    margin: 20px 0px 10px 210px;
+}
+.parrafo{
+    border: solid 1px ;
+    border-bottom-color: white;
+    margin:0px 100px 10px 100px;
+    background-color: white;
+    height: 1030px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+p{
+    margin: 15px;
+    font-size: 20px;
+}
+.click{
+    text-align: center;
+    border-top: solid 2px;
+}
+.tabla{
+    position: absolute;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    margin-top: 35px;
+}
+table{
+
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: solid 1px rgb(197, 223, 231) ;
+    width: 1000px;
+
+}
+.pie{
+    background-color: black;
+    color: white;
+    margin-top:0px;
+    height: 100px;
+}
+.pieparrafo{
+    margin-top: 0px;
+    float: left;
+
+}
+body{
+    background-image:url(https://wallpapercave.com/wp/n2ADkvF.jpg);
+    margin: 0;
+
+}
+div{
+    margin: none;
+    padding: none;
+}
+#fondoregistro{
+    background-color: rgb(51, 162, 255);
+    width : 1360px;
+}
+.fondo{
+    background-image: url(https://downloadwallpaper.org/wp-content/uploads/2016/08/black-and-white-iphone-wallpaper-HD1-1.jpg);
+}
+.invento{
+    clear: both;
+    text-align: center;
+    font-size: 18px;
+    margin-top: none;
+}
+h1{
+    border-bottom: solid;
+    margin:0;
+    text-align: center;
+}
+
+
+.contenedor{
+
+    background-color: white;
+    margin: 0% 5% 0% 5%;
+    height: auto;
+}
+.contenedorhijo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color:rgb(124, 124, 124);
+}
+.main{
+   width: 100%;
+    overflow: hidden;
+    background-color: rgb(122, 119, 102);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+
+
+
+}
+
+.caja{
+    position: relative;
+    width: 250px;
+    height: 300px;
+    background-color:rgb(163, 95, 39);
+    margin: 16px 8px 16px 8px;
+
+    overflow: hidden;
+
+}
+.precio{
+    background-image: radial-gradient(circle at 50% 0, #61862d, #537326);
+    position: absolute;
+    left: 207px; 
+    top: 8px;
+}
+.caja2{
+    width: 20%;
+    height: 100%;
+    background-color:rgb(124, 124, 124);
+   display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+
+.caja:hover{
+    background-color:rgb(85, 158, 255);
+   }
+.lista2{
+       display: block;
+       text-align: left;
+       text-decoration: none;
+   }
+.imagen{
+    width: 300px;
+    height: auto;
+    overflow: hidden;
+    justify-content: center;
+}
+.corte{
+    border-bottom: solid;
+    clear: both;
+}
+@media only screen and (min-width: 1026px) {
+    #boton_index{
+       display: none;
+    }
+    #boton_Index{
+        display: none;
+     }
+
+
+}
+@media only screen and (max-width: 1024px) {
+    #caja2{
+        display: none;
+    }
+    .caja2{
+
+        width: 100%;
+        justify-content: start;
+        overflow: scroll;
+        height: 200px;
+        flex-flow: column wrap;
+
+    }
+    .Ocultar{
+      display: none;
+    }
+
+    .lista2{
+
+       flex-flow: column wrap;
+
+
+    }
+    .contenedorhijo{
+        flex-direction: column-reverse;
+
+    }
+    .caja{
+        width: 270px;
+    }
+
+}
+@media only screen and (max-width: 599px) {
+    .caja2{
+        flex-flow: nowrap;
+        flex-direction: column;
+
+    }
+    .lista2{
+        flex-flow: nowrap;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+@media only screen and (max-width: 1920px) {
+    .caja{
+        width: 260px;
+    }
+}
+
+#efecto{
+    display: none;
+}
+@media only screen and (max-width:360px){
+    .caja2{
+        height: 400px;
+    }
+}
+@media only screen and (max-width:1000px){
+    table{
+        width: 100%;
+
+    }
+}
+@media only screen and (max-width:462px){
+    #especificaciones{
+        display: flex;
+        width: 50%;
+    }
+    #descripcion{
+        width: 50%;
+
+        display: flex;
+    }
+    #form_input{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+}
+@media only screen and (max-width:320px){
+    .contenedorTabla{
+        padding: 0px;
+    }
+}
