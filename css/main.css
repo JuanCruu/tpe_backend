@@ -4,9 +4,6 @@
     width: 100%;
     margin-right: 0PX;
 }
-h5{
-    font-family: 'hb-icons';
-}
 .navegador{
     background-color: black;
     color: white;
@@ -231,7 +228,7 @@ table{
 
 }
 body{
-    background-image:url(https://wallpapercave.com/wp/n2ADkvF.jpg);
+    background-color:  rgb(179, 179, 179) ;
     margin: 0;
 
 }
@@ -283,23 +280,31 @@ h1{
 
 
 }
-
+.formularioAdmin{
+    display: flex;
+     
+    flex-direction: row;
+    width: 1000px;  
+    background-color: rgb(124, 124, 124);
+}
+.elformularioensi{
+    width: 400px;
+}
+.flex_container{
+    display: flex;
+}
 .caja{
-    position: relative;
+
     width: 250px;
-    height: 300px;
+    height: 320px;
     background-color:rgb(163, 95, 39);
     margin: 16px 8px 16px 8px;
-
+    display: flex;
     overflow: hidden;
+    flex-wrap: wrap;
 
 }
-.precio{
-    background-image: radial-gradient(circle at 50% 0, #61862d, #537326);
-    position: absolute;
-    left: 207px; 
-    top: 8px;
-}
+
 .caja2{
     width: 20%;
     height: 100%;

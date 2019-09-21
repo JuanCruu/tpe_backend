@@ -10,6 +10,16 @@ require_once('controller/controlTask.php');
        case 'ver':
         $controller=new controlTask();
         $controller-> mostrarTareas();
+      case 'admin':
+        $controller=new controlTask();
+        $controller-> mostrarAdmin();
+      case 'agregar':
+        $controller=new controlTask();
+        $controller->agregarJuego();
+      case 'borrar':
+        $controller=new controlTask();
+        $controller->borrar($partesURL[1]);
+
    }
 
     

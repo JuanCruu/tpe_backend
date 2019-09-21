@@ -13,5 +13,14 @@ class modelTask{
 
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
+    public function crear( $titulo,$descripcion,$precio,$categoria,$imagen,$link){
+        $query = $this->db->prepare('INSERT INTO juego(nombre, descripcion, precio, imagen, trailer, id_genero_fk) VALUE(?,?,?,?,?,?)');
+        $query->execute([ $titulo,$descripcion,$precio,$imagen,$link,$categoria]);
+    }
+
+    function borarJuego($id) {
+        $query = $this->db->prepare('DELETE FROM juego WHERE id = ?');
+        $query->execute([$id]); 
+    }
 }
 ?>
