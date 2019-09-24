@@ -1,13 +1,17 @@
 #errores
 ////////////////////////////
-smarty problema de impresion de la pagina
--problema de redireccionamiento a la hora de crear o eliminar paginas
--un pequenio error en el route
-
+-problema de redireccionamiento a la hora de crear o eliminar paginas(header: location)
+-smarty non-objet (no inprime)
 #cosas que faltan hacer
 /////////////////////
-crear pagina individual de cada juego
-crear un boton editar
-//////////
-realacionar tablas en la base de datos
-crear un select que muestre los juegos segun su categoria(filtro).
+crear un boton editar (y rodo lo que conlleva) 
+
+
+##cosas que todavia no investigue como hacer{
+  realacionar tablas en la base de datos 
+  crear un select que muestre los juegos segun su categoria(filtro).
+ }
+ ////////////////////
+
+
+
