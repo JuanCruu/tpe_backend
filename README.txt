@@ -4,7 +4,7 @@
 -smarty non-objet (no inprime)
 #cosas que faltan hacer
 /////////////////////
-crear un boton editar (y rodo lo que conlleva) 
+crear un boton editar (y todo lo que conlleva) 
 
 
 ##cosas que todavia no investigue como hacer{
