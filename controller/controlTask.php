@@ -32,13 +32,18 @@ class controlTask{
             $link=$_POST['link'];
 
             $this->model->crear( $titulo,$descripcion,$precio,$categoria,$imagen,$link);
+            # falla el header(location)
             
         }
     }
     function borrar($id){
         $this->model->borarjuego($id);
+        # falla el header(location)
         
-        
+    }
+    function juego($id){
+        $juego = $this->model->getJuego($id);
+        $this->view->verJuego($juego);
     }
 
 }

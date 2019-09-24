@@ -13,6 +13,14 @@ class modelTask{
 
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
+    public function getjuego($id) {
+        $query = $this->db->prepare('SELECT * FROM juego WHERE id = ?');#obtener id del juego mediante a hreft juego/id=(lo que imprima el juego)
+        $query->execute(array($id));
+        
+        return $query->fetchAll(PDO::FETCH_OBJ);
+       
+
+    }
     public function crear( $titulo,$descripcion,$precio,$categoria,$imagen,$link){
         $query = $this->db->prepare('INSERT INTO juego(nombre, descripcion, precio, imagen, trailer, id_genero_fk) VALUE(?,?,?,?,?,?)');
         $query->execute([ $titulo,$descripcion,$precio,$imagen,$link,$categoria]);
