@@ -1,17 +1,13 @@
 #errores
 ////////////////////////////
--problema de redireccionamiento a la hora de crear o eliminar paginas(header: location)
--smarty non-objet (no inprime)
-#cosas que faltan hacer
+-logre hacerlo filtrar por categoria pero... problema:(no use un joins,la relacion entre las tablas esta de gusto por ahora y cuando filtro se pierde el css por temas de ubicacion)
+-el formulario de editar(no redirige correctamente "editar/editar" {nose si estoy codeando bien el model})
+-problemas con el login.
+
 /////////////////////
-crear un boton editar (y todo lo que conlleva) 
+me estoy cansando de importar la base de datos.
 
 
-##cosas que todavia no investigue como hacer{
-  realacionar tablas en la base de datos 
-  crear un select que muestre los juegos segun su categoria(filtro).
- }
- ////////////////////
 
 
 
