@@ -1,5 +1,6 @@
 <?php
 require_once('controller/controlTask.php');
+require_once('controller/login.controller.php');
 
    if($_GET['action']==''){
     $_GET['action']='ver';
@@ -7,7 +8,12 @@ require_once('controller/controlTask.php');
    $partesURL=explode('/',$_GET['action']);
     
    switch ($partesURL[0]) {
-       case 'ver':
+    
+      case 'login':
+        $controller = new LoginController();
+        $controller->showLogin();
+        break;
+      case 'ver':
         $controller=new controlTask();
         $controller-> mostrarTareas();
         break;
@@ -23,10 +29,18 @@ require_once('controller/controlTask.php');
         $controller=new controlTask();
         $controller->borrar($partesURL[1]);
         break;
+      case 'editar':
+        $controller=new controlTask();
+        $controller->editar($partesURL[1]);
+        break;
       case 'juego':
         $controller=new controlTask();
         $controller->juego($partesURL[1]);
-
+        break;
+      case 'buscar':
+        $controller=new controlTask();
+        $controller->buscar($partesURL[1]);
+        break;
    }
 
     

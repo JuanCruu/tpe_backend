@@ -18,6 +18,12 @@ class viewTask{
          $smarty->assign('juego',$juego);
          $smarty->display('templates/juego.tpl');
     }
-    
+    public function formularioEditar(){
+     $smarty=new Smarty();
+     $smarty->display('templates/form.editar.tpl');   
+    }
+    public function otro($nose){
+         echo "adasdasdas";
+    }
 }
 ?>

@@ -17,7 +17,7 @@ class modelTask{
         $query = $this->db->prepare('SELECT * FROM juego WHERE id = ?');#obtener id del juego mediante a hreft juego/id=(lo que imprima el juego)
         $query->execute(array($id));
         
-        return $query->fetchAll(PDO::FETCH_OBJ);
+        return $query->fetch(PDO::FETCH_OBJ);
        
 
     }
@@ -29,6 +29,15 @@ class modelTask{
     function borarJuego($id) {
         $query = $this->db->prepare('DELETE FROM juego WHERE id = ?');
         $query->execute([$id]); 
+    }
+    function editarJuego($id,$titulo,$descripcion,$precio,$categoria,$imagen,$link){
+        $query = $this->db->prepare('UPDATE juego SET nombre, descripcion, precio,imagen,trailer,id_genero_fk) VALUE(?,?,?,?,?,?) WHERE juego.id = ?');
+        $query->execute([ $titulo,$descripcion,$precio,$imagen,$link,$categoria,$id]);
+    }
+    function getFor($id){
+        $query = $this->db->prepare('SELECT * FROM juego  WHERE id_genero_fk= ? ');
+        $query->execute(array($id));
+        return $query->fetchAll(PDO::FETCH_OBJ);
     }
 }
 ?>

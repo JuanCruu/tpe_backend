@@ -22,8 +22,24 @@ class controlTask{
      $this->view->admin($tareas);
     }
     function agregarJuego(){
-        if(isset($_POST['titulo'])){
+            $titulo = $_POST['titulo'];
+            $descripcion = $_POST['descripcion'];
+            $precio = $_POST['precio'];
+            $categoria=$_POST['categoria'];
+            $imagen=$_POST['imagen'];
+            $link=$_POST['link'];
+            if(isset($_POST['titulo'])){
 
+                $this->model->crear( $titulo,$descripcion,$precio,$categoria,$imagen,$link);
+                header ("Location: admin");
+            }
+            
+    }
+    function editar($id){
+
+        $this->view->formularioEditar();
+        var_dump($id);
+        if(isset($_POST['titulo'])){
             $titulo = $_POST['titulo'];
             $descripcion = $_POST['descripcion'];
             $precio = $_POST['precio'];
@@ -31,20 +47,26 @@ class controlTask{
             $imagen=$_POST['imagen'];
             $link=$_POST['link'];
 
-            $this->model->crear( $titulo,$descripcion,$precio,$categoria,$imagen,$link);
-            # falla el header(location)
-            
+            $this->model->editarJuego($id,$titulo,$descripcion,$precio,$categoria,$imagen,$link);
+            var_dump($id,$titulo,$descripcion,$precio,$categoria,$imagen,$link);
         }
     }
+
     function borrar($id){
         $this->model->borarjuego($id);
-        # falla el header(location)
+        header ("Location: ../admin"); 
         
     }
     function juego($id){
         $juego = $this->model->getJuego($id);
         $this->view->verJuego($juego);
+        
     }
+    function buscar($id){
+        $genero=$this->model->getFor($id);
+        $this->view->showTask($genero);
+    }
+   
 
 }
 

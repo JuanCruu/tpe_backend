@@ -4,6 +4,9 @@
     width: 100%;
     margin-right: 0PX;
 }
+.labelcolor{
+    color:white;
+}
 .navegador{
     background-color: black;
     color: white;
@@ -40,7 +43,7 @@
 a{
 
     text-decoration: none;
-    color: white;
+    color: black;
 }
 a:hover{
     color: lightblue;

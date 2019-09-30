@@ -1,24 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>index juanCru</title>
-    <link rel="stylesheet" href="bootstrap/bootstrap-4.3.1-dist/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
-    <script src="js/main.js"></script>
-</head>
+{include 'templates/header.tpl'}
 <body>
     <header>
             <nav class="navbar navbar-dark bg-dark">
-                    <a class="navbar-brand" href="index.html">Home</a>
-                    <a class="navbar-brand" target="blank" href="admin">admin</a>
+                    
+                    <div class="dropdown show">
+                            <a class="btn btn-secondary dropdown-toggle" href="" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Categoria
+                            </a>
+                          
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                              <a class="dropdown-item" href="buscar/1">shooter</a>
+                              <a class="dropdown-item" href="buscar/2">carrera</a>
+                              <a class="dropdown-item" href="buscar/3">lucha</a>
+                              <a class="dropdown-item" href="buscar/4">mundo abierto</a>
+                              <a class="dropdown-item" href="buscar/5">indie</a>
+                              <a class="dropdown-item" href="buscar/6">estrategia</a>
+                            </div>
+                          </div>
+                    
+                    
+                    <div>
+                        <form method="POST" action="admin">
+                            <input type="text" name="Usuario" id="Usuario" placeholder="Usuario"> 
+                            <input type="password" name="password" id="password" placeholder="Contraseña">
+                            <button>Login</button>
+
+                        </form>
+                    </div>
+                    
 
                     <button id="boton_index" type="button">
                         <span  class="navbar-toggler-icon"></span>
                     </button>
-
+                
             </nav>
     </header>
     <div class="flex_container">
@@ -39,7 +53,4 @@
             </a>
         </div>
     {/foreach}   
-        
-     
-</body>
-</html>
+{include 'templates/footer.tpl'}
