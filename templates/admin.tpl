@@ -55,10 +55,48 @@
                     <ul class="list-group">
                         {foreach $datos as $tarea}
                             <li class="list-group-item"><h5>{$tarea->nombre}</h5><a href="borrar/{$tarea->id}">/borrar/<a>
-                                <a href="editar/{$tarea->id}">editar</a></li> 
+                                <a href="editar/{$tarea->id}">editar {$tarea->id}</a></li> 
                         {/foreach}
                     </ul>    
-                </div>               
+                </div>     
+                <div>
+                        <h2>editar?</h2>
+                     <form method="POST" action="editar" >
+                        <div class="form-group">
+                            <label >nombre</label>
+                            <input type="text" class="form-control" id="titulo" name="titulo">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">precio</label>
+                            <input type="number" class="form-control" id="precio" name="precio">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">imagen</label>
+                            <input type="text" class="form-control" id="imagen" name="imagen" placeholder="link de la imagen">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">trailer</label>
+                            <input type="text" class="form-control" id="link" name="link" placeholder="link del trailer">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlSelect1">Categoria</label>
+                            <select class="form-control" id="categoria" name="categoria">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="exampleFormControlTextarea1">descripcion</label>
+                            <textarea class="form-control" id="descripcion" name="descripcion" rows="3"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>          
             </div>
             
         </body>

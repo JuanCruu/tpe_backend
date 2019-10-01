@@ -9,7 +9,7 @@ require_once('controller/login.controller.php');
     
    switch ($partesURL[0]) {
     
-      case 'login':
+      case 'login':# no anda nada
         $controller = new LoginController();
         $controller->showLogin();
         break;
@@ -29,15 +29,15 @@ require_once('controller/login.controller.php');
         $controller=new controlTask();
         $controller->borrar($partesURL[1]);
         break;
-      case 'editar':
+      case 'editar': #no anda el model
         $controller=new controlTask();
-        $controller->editar($partesURL[1]);
+        $controller->editar();
         break;
       case 'juego':
         $controller=new controlTask();
         $controller->juego($partesURL[1]);
         break;
-      case 'buscar':
+      case 'buscar':#no funciona el join
         $controller=new controlTask();
         $controller->buscar($partesURL[1]);
         break;

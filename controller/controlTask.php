@@ -35,10 +35,8 @@ class controlTask{
             }
             
     }
-    function editar($id){
+    function editar(){
 
-        $this->view->formularioEditar();
-        var_dump($id);
         if(isset($_POST['titulo'])){
             $titulo = $_POST['titulo'];
             $descripcion = $_POST['descripcion'];
@@ -47,8 +45,8 @@ class controlTask{
             $imagen=$_POST['imagen'];
             $link=$_POST['link'];
 
-            $this->model->editarJuego($id,$titulo,$descripcion,$precio,$categoria,$imagen,$link);
-            var_dump($id,$titulo,$descripcion,$precio,$categoria,$imagen,$link);
+            $this->model->editarJuego($titulo,$descripcion,$precio,$categoria,$imagen,$link);
+            
         }
     }
 
