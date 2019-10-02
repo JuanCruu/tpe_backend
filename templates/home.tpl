@@ -21,8 +21,6 @@
                     
                     <div>
                         <form method="POST" action="admin">
-                            <input type="text" name="Usuario" id="Usuario" placeholder="Usuario"> 
-                            <input type="password" name="password" id="password" placeholder="Contraseña">
                             <button>Login</button>
 
                         </form>

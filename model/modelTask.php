@@ -30,10 +30,10 @@ class modelTask{
         $query = $this->db->prepare('DELETE FROM juego WHERE id = ?');
         $query->execute([$id]); 
     }
-    function editarJuego($titulo,$descripcion,$precio,$categoria,$imagen,$link){
-        $query = $this->db->prepare('UPDATE juego SET nombre= ?, descripcion= ?, precio= ?,imagen= ?,trailer= ?,id_genero_fk= ? , WHERE id = 17');
+    function editarJuego($titulo,$precio,$imagen,$link,$categoria,$descripcion,$id){
+        $query = $this->db->prepare('UPDATE juego SET nombre= ?, descripcion= ?, precio= ?,imagen= ?,trailer= ?, id_genero_fk= ?  WHERE id = ?');
 
-        $query->execute(array( $titulo,$descripcion,$precio,$imagen,$link,$categoria));
+        $query->execute(array($titulo,$descripcion,$precio,$imagen,$link,$categoria,$id));
         var_dump($query->errorinfo());
     }
     function getFor($id){

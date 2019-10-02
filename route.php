@@ -1,6 +1,10 @@
 <?php
 require_once('controller/controlTask.php');
-require_once('controller/login.controller.php');
+
+
+define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
+    define("LOGIN",  'login');
+    define("VER",  'ver');
 
    if($_GET['action']==''){
     $_GET['action']='ver';
@@ -31,7 +35,11 @@ require_once('controller/login.controller.php');
         break;
       case 'editar': #no anda el model
         $controller=new controlTask();
-        $controller->editar();
+        $controller->editar($partesURL[1]);
+        break;
+      case 'confirmar':
+        $controller=new controlTask();
+        $controller->confirmar($partesURL[1]);
         break;
       case 'juego':
         $controller=new controlTask();

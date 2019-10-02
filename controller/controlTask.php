@@ -35,7 +35,23 @@ class controlTask{
             }
             
     }
-    function editar(){
+    function editar($id){
+           $eljuego= $this->model->getjuego($id);
+            $this->view->formularioEditar($eljuego);
+
+        // if(isset($_POST['titulo'])){
+        //     $titulo = $_POST['titulo'];
+        //     $descripcion = $_POST['descripcion'];
+        //     $precio = $_POST['precio'];
+        //     $categoria=$_POST['categoria'];
+        //     $imagen=$_POST['imagen'];
+        //     $link=$_POST['link'];
+        //     var_dump($_POST);
+        //     $this->model->editarJuego($id, $titulo,$precio,$imagen,$link,$categoria,$descripcion);
+            
+        // }
+    }
+    function confirmar($id){
 
         if(isset($_POST['titulo'])){
             $titulo = $_POST['titulo'];
@@ -44,10 +60,12 @@ class controlTask{
             $categoria=$_POST['categoria'];
             $imagen=$_POST['imagen'];
             $link=$_POST['link'];
-
-            $this->model->editarJuego($titulo,$descripcion,$precio,$categoria,$imagen,$link);
+            var_dump($_POST);
+            $this->model->editarJuego( $titulo,$precio,$imagen,$link,$categoria,$descripcion,$id);
+           header ("Location: ../admin");
             
         }
+
     }
 
     function borrar($id){
