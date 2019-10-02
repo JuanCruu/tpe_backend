@@ -1,5 +1,6 @@
 <?php
 require_once('controller/controlTask.php');
+require_once('controller/loginController.php');
 
 
 define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
@@ -24,6 +25,14 @@ define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"]
       case 'admin':
         $controller=new controlTask();
         $controller-> mostrarAdmin();
+        break;
+      case 'login':
+        $controller=new loginController();
+        $controller-> showLogin();
+        break;
+      case 'verify':
+        $controller=new loginController();
+        $controller-> verifyUser();
         break;
       case 'agregar':
         $controller=new controlTask();
