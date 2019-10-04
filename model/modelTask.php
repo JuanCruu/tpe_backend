@@ -36,9 +36,9 @@ class modelTask{
         $query->execute(array($titulo,$descripcion,$precio,$imagen,$link,$categoria,$id));
         var_dump($query->errorinfo());
     }
-    function getFor($id){
-        $query = $this->db->prepare('SELECT * FROM juego  WHERE id_genero_fk= ? ');
-        $query->execute(array($id));
+    function getFor($nombre){
+        $query = $this->db->prepare('SELECT j.* FROM juego AS j JOIN categoria as c ON j.id_genero_fk = c.id_genero WHERE c.nombre = ?');
+        $query->execute(array($nombre));
         return $query->fetchAll(PDO::FETCH_OBJ);
     }
 }

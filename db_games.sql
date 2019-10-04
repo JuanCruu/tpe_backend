@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-10-2019 a las 17:47:21
--- Versión del servidor: 10.1.40-MariaDB
--- Versión de PHP: 7.3.5
+-- Tiempo de generación: 05-10-2019 a las 00:40:18
+-- Versión del servidor: 10.1.25-MariaDB
+-- Versión de PHP: 5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -86,7 +86,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`user`, `password`) VALUES
-('eljuancruu22@gmail.com', '416327321q');
+('eljuancruu22@gmail.com', '416327321q'),
+('pepe', '$2y$10$HnwGNZ2BStrDayt5q.vIhu23BU2I8xqHSLL0H1S70NlIfIXWXloyq');
 
 --
 -- Índices para tablas volcadas
@@ -115,13 +116,11 @@ ALTER TABLE `juego`
 --
 ALTER TABLE `categoria`
   MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
 --
 -- AUTO_INCREMENT de la tabla `juego`
 --
 ALTER TABLE `juego`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
 --
 -- Restricciones para tablas volcadas
 --

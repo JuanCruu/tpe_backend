@@ -24,11 +24,13 @@ class loginController{
 
         $user= $this->model->getbyUsername($username);
        if (!empty($user) && password_verify($password, $user->password)){
-            echo'win win';
+            echo "asds";
+            #header( "Location :" .  ADMIN);
         } else{
             var_dump( $password);
             var_dump($user);
         }
     }
+    
 }
 ?>

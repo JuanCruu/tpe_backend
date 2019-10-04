@@ -12,8 +12,8 @@ class viewTask{
         $this->smarty->assign('datos',$tareas);
         $this->smarty->display('templates/admin.tpl');
      }
-    public function showTask($tareas){
-         $this->smarty->assign('datos',$tareas);
+    public function showTask($juegos){
+         $this->smarty->assign('datos',$juegos);
          $this->smarty->display('templates/home.tpl');
     }
     public function verJuego($juego){

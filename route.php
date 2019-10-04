@@ -6,6 +6,8 @@ require_once('controller/loginController.php');
 define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]).'/');
     define("LOGIN",  'login');
     define("VER",  'ver');
+    define("ADMIN", 'admin');
+
 
    if($_GET['action']==''){
     $_GET['action']='ver';
@@ -34,6 +36,10 @@ define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"]
         $controller=new loginController();
         $controller-> verifyUser();
         break;
+      case 'verify2':
+          $controller=new loginController();
+          $controller-> verifyUser2();
+          break;
       case 'agregar':
         $controller=new controlTask();
         $controller->agregarJuego();

@@ -79,8 +79,8 @@ class controlTask{
         
     }
     function buscar($id){
-        $genero=$this->model->getFor($id);
-        $this->view->showTask($genero);
+        $juegos=$this->model->getFor($id);
+        $this->view->showTask($juegos);
     }
    
 

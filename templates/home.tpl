@@ -9,18 +9,18 @@
                             </a>
                           
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                              <a class="dropdown-item" href="buscar/1">shooter</a>
-                              <a class="dropdown-item" href="buscar/2">carrera</a>
-                              <a class="dropdown-item" href="buscar/3">lucha</a>
-                              <a class="dropdown-item" href="buscar/4">mundo abierto</a>
-                              <a class="dropdown-item" href="buscar/5">indie</a>
-                              <a class="dropdown-item" href="buscar/6">estrategia</a>
+                              <a class="dropdown-item" href="buscar/shooter">shooter</a>
+                              <a class="dropdown-item" href="buscar/carrera">carrera</a>
+                              <a class="dropdown-item" href="buscar/lucha">lucha</a>
+                              <a class="dropdown-item" href="buscar/mundo abierto">mundo abierto</a>
+                              <a class="dropdown-item" href="buscar/indie">indie</a>
+                              <a class="dropdown-item" href="buscar/estrategia">estrategia</a>
                             </div>
                           </div>
                     
                     
                     <div>
-                        <form method="POST" action="admin">
+                        <form method="POST" action="login">
                             <button>Login</button>
 
                         </form>

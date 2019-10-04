@@ -5,7 +5,7 @@
 
         <div class="form-group">
             <label>Usuario (email)</label>
-            <input type="email" name="username" class="form-control" placeholder="Ingrese email">
+            <input type="text" name="username" class="form-control" placeholder="Ingrese email">
         </div>
 
         <div class="form-group">
