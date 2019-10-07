@@ -16,10 +16,10 @@ define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"]
     
    switch ($partesURL[0]) {
     
-      case 'login':# no anda nada
-        $controller = new LoginController();
-        $controller->showLogin();
-        break;
+      
+      case 'logout':
+        $controller= new loginController();
+        $controller-> logout();
       case 'ver':
         $controller=new controlTask();
         $controller-> mostrarTareas();
@@ -36,10 +36,6 @@ define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"]
         $controller=new loginController();
         $controller-> verifyUser();
         break;
-      case 'verify2':
-          $controller=new loginController();
-          $controller-> verifyUser2();
-          break;
       case 'agregar':
         $controller=new controlTask();
         $controller->agregarJuego();
@@ -48,7 +44,7 @@ define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"]
         $controller=new controlTask();
         $controller->borrar($partesURL[1]);
         break;
-      case 'editar': #no anda el model
+      case 'editar':
         $controller=new controlTask();
         $controller->editar($partesURL[1]);
         break;
@@ -60,7 +56,7 @@ define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"]
         $controller=new controlTask();
         $controller->juego($partesURL[1]);
         break;
-      case 'buscar':#no funciona el join
+      case 'buscar':
         $controller=new controlTask();
         $controller->buscar($partesURL[1]);
         break;

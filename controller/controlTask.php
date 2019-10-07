@@ -6,11 +6,12 @@ class controlTask{
     
     private $model;
     private $view;
-
+    private $authHelper;
 
     function __construct(){
         $this->model=new modelTask();
         $this->view=new viewTask();
+        $this->authHelper = new AuthHelper();
     }
     function mostrarTareas(){
     $tareas = $this->model->getAll();
@@ -18,6 +19,8 @@ class controlTask{
 
     }
     function mostrarAdmin(){
+     $this->authHelper-> checkLogeed();
+     
      $tareas = $this->model->getAll();
      $this->view->admin($tareas);
     }

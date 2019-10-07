@@ -233,6 +233,7 @@ table{
 body{
     background-image:url(hojas.jpg) ;
     margin: 0;
+    
 
 }
 div{
@@ -256,8 +257,11 @@ h1{
     border-bottom: solid;
     margin:0;
     text-align: center;
+    background: white;
 }
-
+label{
+    background: white; 
+}
 
 .contenedor{
 
@@ -289,6 +293,9 @@ h1{
     flex-direction: row;
     width: 1000px;  
     background-color: rgb(124, 124, 124);
+}
+.fomurlarioblanco{
+    background-color: azure;
 }
 .elformularioensi{
     width: 400px;

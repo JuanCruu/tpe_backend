@@ -24,13 +24,18 @@ class loginController{
 
         $user= $this->model->getbyUsername($username);
        if (!empty($user) && password_verify($password, $user->password)){
-            echo "asds";
+           
+            $this->authHelper->login($user);
             header("Location:" .  ADMIN);
-        } else{
-            var_dump( $password);
-            var_dump($user);
+        } else {
+            $this->view->showLogin("Login incorrecto");
         }
     }
+    public function logout() {
+        $this->authHelper->logout();
+        header('Location: ' . LOGIN);
+    }
+
     
 }
 ?>

@@ -1,5 +1,24 @@
 {include 'templates/header.tpl'}
         <body>
+            <nav class="navbar navbar-dark bg-dark">
+                    
+                    <div>
+                        <form method="POST" action="ver">
+                            <button>Home</button>
+
+                        </form>
+                        <form method="POST" action="logout">
+                            <button>Cerrar sesión</button>
+
+                        </form>
+                    </div>
+                    
+
+                    <button id="boton_index" type="button">
+                        <span  class="navbar-toggler-icon"></span>
+                    </button>
+                
+            </nav>
             <div class="formularioAdmin">
                 <div class="elformularioensi">
                 <h1>Add juego</h1>
