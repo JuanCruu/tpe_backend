@@ -38,7 +38,8 @@ class controlTask{
             }
             
     }
-    function editar($id){
+    function editar($params = NULL){
+            $id = $params[':ID'];
            $eljuego= $this->model->getjuego($id);
             $this->view->formularioEditar($eljuego);
 
@@ -54,8 +55,8 @@ class controlTask{
             
         // }
     }
-    function confirmar($id){
-
+    function confirmar($params=NULL){
+            $id=$params[':ID'];
         if(isset($_POST['titulo'])){
             $titulo = $_POST['titulo'];
             $descripcion = $_POST['descripcion'];
@@ -71,17 +72,20 @@ class controlTask{
 
     }
 
-    function borrar($id){
+    function borrar($params = NULL){
+        $id = $params[':ID'];
         $this->model->borarjuego($id);
         header ("Location: ../admin"); 
         
     }
-    function juego($id){
+    function juego($params=NULL){
+        $id=$params[':ID'];
         $juego = $this->model->getJuego($id);
         $this->view->verJuego($juego);
         
     }
-    function buscar($id){
+    function buscar($params=NULL){
+        $id=$params[':ID'];
         $juegos=$this->model->getFor($id);
         $this->view->showTask($juegos);
     }

@@ -20,10 +20,9 @@
                     
                     
                     <div>
-                        <form method="POST" action="login">
-                            <button>Login</button>
-
-                        </form>
+                        <a href="login"> Login </a> 
+                             
+                        
                     </div>
                     
 

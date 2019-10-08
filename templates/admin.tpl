@@ -2,16 +2,19 @@
         <body>
             <nav class="navbar navbar-dark bg-dark">
                     
-                    <div>
+                    <div class="mr-auto">
                         <form method="POST" action="ver">
                             <button>Home</button>
-
+                    
                         </form>
+                        </div>
+                        <div class="ml-auto">
                         <form method="POST" action="logout">
                             <button>Cerrar sesión</button>
 
                         </form>
-                    </div>
+                          </div>
+                    
                     
 
                     <button id="boton_index" type="button">
