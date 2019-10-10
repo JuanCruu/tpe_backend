@@ -1,17 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css">
-    <link rel="stylesheet" href="bootstrap/bootstrap-4.3.1-dist/css/bootstrap.min.css">
-    <title>Document</title>
-</head>
+{include 'templates/header.tpl'}
 <body>
-    <div>            
             
+    <div class="flex_juego">
+            <div>            
+                <img class="imagenjuego" src="{$juego->imagen}" alt="">
+            </div>
+            <div>
+                <p>
+                {$juego->descripcion}
+            </p>
+            </div>
+              
     </div>
-    <h1>{$juego->nombre}</h1>
+    
+    <div class="flex_trailer">
+        <div class="caja2">
+            <h1>{$juego->nombre}</h1>
+            <div class="caja3">
+                {$juego->trailer}
+            </div>
+        </div>
+        
+    </div>
 </body>
 </html>

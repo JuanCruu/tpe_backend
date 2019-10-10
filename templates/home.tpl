@@ -9,6 +9,7 @@
                             </a>
                           
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="ver">/all</a>
                               <a class="dropdown-item" href="buscar/shooter">shooter</a>
                               <a class="dropdown-item" href="buscar/carrera">carrera</a>
                               <a class="dropdown-item" href="buscar/lucha">lucha</a>
@@ -32,22 +33,26 @@
                 
             </nav>
     </header>
-    <div class="flex_container">
-        {foreach $datos as $tarea}
+    <div class="centrarhome">
+        <div class="flex_container">
+            {foreach $datos as $tarea}
+                            
+                <div  class="caja">
+                    <a href="juego/{$tarea->id}">
                         
-        <div  class="caja">
-            <a href="juego/{$tarea->id}">
-                
-                <div class="imagen">
-                    
-                    <h3>{$tarea->nombre} </h3>
-                    <h5 class="precio"> $   {$tarea->precio}</h5>
-                    
-                    <img src="{$tarea->imagen}">
-                    
+                        <div class="imagen">
+                            
+                            <h3>{$tarea->nombre} </h3>
+                            <h5 class="precio"> $   {$tarea->precio}</h5>
+                            
+                            <img class="imagenhome" src="{$tarea->imagen}">
+                            
+                        </div>
+                        
+                    </a>
                 </div>
-                
-            </a>
-        </div>
-    {/foreach}   
+            {/foreach}   
+    </div>
+    </div>
+    
 {include 'templates/footer.tpl'}

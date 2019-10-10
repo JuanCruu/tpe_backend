@@ -269,6 +269,16 @@ label{
     margin: 0% 5% 0% 5%;
     height: auto;
 }
+.imagenjuego{
+    width: 300px;
+    height: 320px;
+}
+.imagenhome{
+    width: 260px;
+    height: 290px;
+}
+
+
 .contenedorhijo{
     display: flex;
     flex-direction: row;
@@ -300,8 +310,24 @@ label{
 .elformularioensi{
     width: 400px;
 }
-.flex_container{
+.centrarhome{
     display: flex;
+}   
+.flex_juego{
+    display: flex;
+    background-color: rgb(248, 209, 81);
+}    
+.flex_trailer{
+    
+    justify-content: center;
+    display: flex;
+    
+}
+.flex_container{
+    justify-content: center;
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
 }
 .caja{
 
@@ -309,19 +335,20 @@ label{
     height: 320px;
     background-color:rgb(163, 95, 39);
     margin: 16px 8px 16px 8px;
-    display: flex;
+    
     overflow: hidden;
-    flex-wrap: wrap;
+    
 
 }
 
 .caja2{
-    width: 20%;
-    height: 100%;
-    background-color:rgb(124, 124, 124);
-   display: flex;
-    flex-wrap: wrap;
-    text-align: center;
+    width: 80%;
+    background-color: rgb(255, 255, 255);
+    
+}
+.caja3{
+    display:flex; 
+    justify-content: center;
 }
 
 
@@ -336,7 +363,7 @@ label{
 .imagen{
     width: 300px;
     height: auto;
-    overflow: hidden;
+    
     justify-content: center;
 }
 .corte{
