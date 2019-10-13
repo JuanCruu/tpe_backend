@@ -25,10 +25,31 @@ class controlTask{
      $this->view->admin($tareas);
     }
     function agregarJuego(){
+        $categoria= 0;
+        switch ($_POST['categoria']){
+            case 'shooter':
+            $categoria=1;
+                break;
+            case 'carrera':
+            $categoria=2;
+                break;
+            case 'lucha':
+            $categoria=3;
+                break;
+            case 'mundo abierto':
+            $categoria=4;
+                break;
+            case 'indie':
+            $categoria=5;
+                break;
+            case 'estrategia':
+            $categoria=6;
+                break;
+        }
             $titulo = $_POST['titulo'];
             $descripcion = $_POST['descripcion'];
             $precio = $_POST['precio'];
-            $categoria=$_POST['categoria'];
+            #categoria=$_POST['categoria'];
             $imagen=$_POST['imagen'];
             $link=$_POST['link'];
             if(isset($_POST['titulo'])){
@@ -58,10 +79,31 @@ class controlTask{
     function confirmar($params=NULL){
             $id=$params[':ID'];
         if(isset($_POST['titulo'])){
+            $categoria= 0;
+                switch ($_POST['categoria']){
+                    case 'shooter':
+                    $categoria=1;
+                        break;
+                    case 'carrera':
+                    $categoria=2;
+                        break;
+                    case 'lucha':
+                    $categoria=3;
+                        break;
+                    case 'mundo abierto':
+                    $categoria=4;
+                        break;
+                    case 'indie':
+                    $categoria=5;
+                        break;
+                    case 'estrategia':
+                    $categoria=6;
+                        break;
+                }
             $titulo = $_POST['titulo'];
             $descripcion = $_POST['descripcion'];
             $precio = $_POST['precio'];
-            $categoria=$_POST['categoria'];
+            #$categoria=$_POST['categoria'];
             $imagen=$_POST['imagen'];
             $link=$_POST['link'];
             var_dump($_POST);

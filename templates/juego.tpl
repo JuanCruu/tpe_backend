@@ -6,9 +6,10 @@
                 <img class="imagenjuego" src="{$juego->imagen}" alt="">
             </div>
             <div>
+            
                 <p>
-                {$juego->descripcion}
-            </p>
+                    {$juego->descripcion}
+                </p>
             </div>
               
     </div>

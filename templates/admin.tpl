@@ -45,12 +45,12 @@
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Categoria</label>
                                 <select class="form-control" id="categoria" name="categoria">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                                <option>5</option>
-                                <option>6</option>
+                                <option>shooter</option>
+                                <option>carrera</option>
+                                <option>lucha</option>
+                                <option>mundo abierto</option>
+                                <option>indie</option>
+                                <option>estrategia</option>
                                 </select>
                             </div>
                             
