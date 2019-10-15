@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-10-2019 a las 17:54:18
+-- Tiempo de generación: 15-10-2019 a las 17:30:14
 -- Versión del servidor: 10.1.40-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -72,7 +72,8 @@ INSERT INTO `juego` (`id`, `nombre`, `descripcion`, `precio`, `imagen`, `trailer
 (15, 'dirt rally', 'DiRT Rally es el juego de rally más auténtico y emocionante, probado en carretera a lo largo de más de 60 millones de millas por la comunidad de DiRT. Captura la emoción de las carreras al límite mientras recorres carreteras peligrosas a velocidad vertiginosa; sabes que un choque podría dinamitar tu tiempo de etapa.\r\nCada etapa te pone a prueba de manera diferente mientras corres al límite por nie', 439, 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMSEhUSEhMVFhUXGBgWGBcXFxcVFRYXFxcXGBUZGhcYHSggHR0lGxgaITEhJSkrLi4uGCAzODMtNygtLisBCgoKDg0OGxAQGy0lICUtLS0tLS8tLS0tLS0tLS0tLS0vLy8tNy8tLS0tLS0tLS0tLS0tLS0tLS8tLy0tLS0tLf/AABEIAQIAwwMBIgACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAEBQMGAAEHAgj/xABMEAACAQIEAwUEBgcGAgkFAQABAhEAAwQSITEFQVEGEyJhcTKBkaEHI0KxwfAUUmKSstHhM1Ryc4LxFbMXJDRDRFN0k8IlNWOi0hb/xAAaAQACAwEBAAAAAAAAAAAAAAACAwABBAUG/8QANBEAAgIBAwIDBQcDBQAAAAAAAAECEQMSITEEQRNRYSIycYGhBRRSkbHR4SNi8', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/E79ofEtVlBg\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 2),
 (16, 'Rocket League', 'Juego de acción y deportes futurista, en Rocket League® los jugadores se equiparán con vehículos potenciados al máximo que pueden chocar contra pelotas para lograr increíbles goles o paradas épicas en múltiples arenas ricas en detalles. Gracias a un avanzado sistema de física que emula interacciones realistas, Rocket League® se apoya en la masa y la inercia para dar a los jugadores una sensación c', 224, 'https://static-cdn.jtvnw.net/ttv-boxart/Rocket%20League.jpg', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/NC82dWrFqCE\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 2),
 (17, 'street fighter v', ' Experimenta la intensidad de la batalla cara a cara en Street Fighter® V.Elige entre 16 personajes icónicos, cada uno con su propia historia personal y desafíos de entrenamiento únicos, y luego lucha contra amigos en línea o sin conexión con una sólida variedad de opciones para cada partida. ', 497, 'https://i11a.3djuegos.com/juegos/11099/street_fighter_5/fotos/ficha/street_fighter_5-2672088.jpg', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/2-9abLlPmp0\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 3),
-(18, 'mortal kombat 11', 'Mortal Kombat ha regresado mejor que nunca en esta entrega de la icónica saga. ', 1200, 'https://www.cinepremiere.com.mx/wp-content/uploads/2019/04/mortalkombat11.jpg', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/7zwQPJmg-Kg\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 1);
+(18, 'mortal kombat 11', 'Mortal Kombat ha regresado mejor que nunca en esta entrega de la icónica saga. ', 1200, 'https://www.cinepremiere.com.mx/wp-content/uploads/2019/04/mortalkombat11.jpg', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/7zwQPJmg-Kg\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 1),
+(22, 'tiro tiro', '', 0, '', '', 5);
 
 -- --------------------------------------------------------
 
@@ -125,7 +126,7 @@ ALTER TABLE `categoria`
 -- AUTO_INCREMENT de la tabla `juego`
 --
 ALTER TABLE `juego`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Restricciones para tablas volcadas
