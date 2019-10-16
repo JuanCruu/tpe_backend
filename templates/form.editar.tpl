@@ -15,7 +15,7 @@
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">trailer</label>
-            <input type="text" class="form-control" id="link" name="link" value="{$juego->trailer}">
+            <input type="text" class="form-control" id="link" name="link" value='{$juego->trailer}'>
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Categoria</label>
@@ -31,7 +31,7 @@
         
         <div class="form-group">
             <label for="exampleFormControlTextarea1">descripcion</label>
-            <textarea class="form-control" id="descripcion" name="descripcion" rows="3" value="{$juego->descripcion}"></textarea>
+            <textarea class="form-control" id="descripcion" name="descripcion" rows="3" value="{$juego->descripcion}">{$juego->descripcion}</textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

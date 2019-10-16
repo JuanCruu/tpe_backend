@@ -21,10 +21,12 @@
                     
                     
                     <div>
-                        <a href="login"> Login </a> 
+                        <a href="login"> <button>login<button> </a> 
+                        <a href="admin"><button>admin<button></a>
                              
                         
                     </div>
+                    
                     
 
                     <button id="boton_index" type="button">

@@ -9,7 +9,10 @@
             
                 <p>
                     {$juego->descripcion}
+                    <p>${$juego->precio}</p>
                 </p>
+                <button>comprar</button>
+                
             </div>
               
     </div>
