@@ -14,9 +14,5 @@ class userModel{
 
         return $query->fetch(PDO::FETCH_OBJ);
     }
-    public function crearHash( ){
-        $query = $this->db->prepare('INSERT INTO usuarios () VALUE()');
-        $query->execute([]);
-    }
 }
 ?>
