@@ -45,12 +45,12 @@
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Categoria</label>
                                 <select class="form-control" id="categoria" name="categoria">
-                                <option>shooter</option>
-                                <option>carrera</option>
-                                <option>lucha</option>
-                                <option>mundo abierto</option>
-                                <option>indie</option>
-                                <option>estrategia</option>
+                                {foreach $categorias as $tarea}
+                            
+                                <option>{$tarea->nombre}</option>
+                                    
+                        
+                                {/foreach}
                                 </select>
                             </div>
                             
@@ -62,7 +62,7 @@
                         </form>
 
                 </div>
-                <div >
+                <div class="elformularioensi">
                     <h1>lista de juegos</h1>
                     <ul class="list-group">
                         {foreach $datos as $tarea}
@@ -71,8 +71,32 @@
                         {/foreach}
                     </ul>    
                 </div>     
-                        
+                     
+                <div>
+                    <h1>Add Categoria</h1>
+                    <form method="post" action="agregarCategoria" >
+                         <div class="form-group">
+                                <label >nombre</label>
+                                <input type="text" class="form-control" id="categoria" name="categoria">
+                        </div>   
+                            
+                     <button type="submit" class="btn btn-primary">Crear</button>
+                                
+                    </form>
+                    <h1>_|_Categorias_|_</h1>
+                    <ul class="list-group">
+                        {foreach $categorias as $tarea}
+                            <li class="list-group-item">
+                                <h5>{$tarea->nombre}</h5><a href="borrarCategoria/{$tarea->id_genero}">/borrar/<a>
+                                    <a href="editarCategoria/{$tarea->nombre}">editar </a></li> 
+                            </li> 
+                        {/foreach}
+                    </ul> 
+                </div>
             </div>
+                 
+                  
+            
             
         </body>
         </html>'

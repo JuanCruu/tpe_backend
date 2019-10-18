@@ -10,22 +10,22 @@
                           
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item" href="ver">/all</a>
-                              <a class="dropdown-item" href="buscar/shooter">shooter</a>
-                              <a class="dropdown-item" href="buscar/carrera">carrera</a>
-                              <a class="dropdown-item" href="buscar/lucha">lucha</a>
-                              <a class="dropdown-item" href="buscar/mundo abierto">mundo abierto</a>
-                              <a class="dropdown-item" href="buscar/indie">indie</a>
-                              <a class="dropdown-item" href="buscar/estrategia">estrategia</a>
+                                {foreach $categorias as $tarea}
+                                <a class="dropdown-item" href="buscar/{$tarea->id_genero}">{$tarea->nombre}</a>
+                                {/foreach}
                             </div>
-                          </div>
-                    
-                    
+                    </div>
                     <div>
                         <a href="login"> <button>login<button> </a> 
                         <a href="admin"><button>admin<button></a>
                              
-                        
                     </div>
+                        
+                            
+                            
+                              
+                    
+                    
                     
                     
 

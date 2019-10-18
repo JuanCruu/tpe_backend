@@ -8,9 +8,10 @@ class viewAdmin{
           $this->smarty= new Smarty();
           $this->smarty->assign('basehref', BASE_URL);
       }
-    public function admin($tareas){
- 
-        $this->smarty->assign('datos',$tareas);
+    public function admin($juegos,$categorias){
+        
+        $this->smarty->assign('categorias',$categorias);
+        $this->smarty->assign('datos',$juegos);
         $this->smarty->display('templates/admin.tpl');
      }
     

@@ -1,11 +1,13 @@
 <?php
-include_once('model/juegoMoldel.php');
-include_once('view/viewHome.php');
+include_once('./model/juegoModel.php');
+include_once('./model/categoriasModel.php');
+include_once('./view/viewHome.php');
 
 # encargado de la logica de la pagina principal
 
 class homeController{
-    
+
+    private $categoriasModel;
     private $model;
     private $view;
     private $authHelper;
@@ -14,10 +16,13 @@ class homeController{
         $this->model=new juegoModel();
         $this->view=new viewHome();
         $this->authHelper = new AuthHelper();
+        $this->categoriasModel=new categoriasModel();
     }
     function mostrarjuegos(){
-        $tareas = $this->model->getAll();
-        $this->view->showTask($tareas);
+        $juegos = $this->model->getAll();
+        $categorias=$this->categoriasModel->getCategorias();
+        #que traiga todas las categorias
+        $this->view->showTask($juegos,$categorias);
     }  
     function juego($params=NULL){
         $id=$params[':ID'];
@@ -28,7 +33,8 @@ class homeController{
     function buscar($params=NULL){
         $id=$params[':ID'];
         $juegos=$this->model->getFor($id);
-        $this->view->showTask($juegos);
+        $categorias=$this->categoriasModel->getCategorias();
+        $this->view->showTask($juegos,$categorias);
     }
 
    

@@ -7,8 +7,10 @@ class viewHome{
          $this->smarty= new Smarty();
          $this->smarty->assign('basehref', BASE_URL);
      }
-     public function showTask($juegos){
-        $this->smarty->assign('datos',$juegos);
+     public function showTask($juegos,$categorias){
+          $this->smarty->assign('categorias',$categorias);
+          
+          $this->smarty->assign('datos',$juegos);
         $this->smarty->display('templates/home.tpl');
    }
    function mostrarTareas(){
