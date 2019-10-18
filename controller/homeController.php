@@ -21,8 +21,7 @@ class homeController{
     function mostrarjuegos(){
         $juegos = $this->model->getAll();
         $categorias=$this->categoriasModel->getCategorias();
-        #que traiga todas las categorias
-        $this->view->showTask($juegos,$categorias);
+        $this->view->showGames($juegos,$categorias);
     }  
     function juego($params=NULL){
         $id=$params[':ID'];
@@ -34,7 +33,7 @@ class homeController{
         $id=$params[':ID'];
         $juegos=$this->model->getFor($id);
         $categorias=$this->categoriasModel->getCategorias();
-        $this->view->showTask($juegos,$categorias);
+        $this->view->showGames($juegos,$categorias);
     }
 
    

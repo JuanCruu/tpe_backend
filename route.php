@@ -14,21 +14,23 @@
     #home
     $r->addRoute("ver", "GET", "homeController", "mostrarjuegos");
     $r->addRoute("juego/:ID", "GET", "homeController", "juego");
-    $r->addRoute("buscar/:ID", "GET", "homeController", "buscar");# no se si filtra 
+    $r->addRoute("buscar/:ID", "GET", "homeController", "buscar");
     #login
     $r->addRoute("login", "GET", "loginController", "showLogin");
     $r->addRoute("verify", "POST", "loginController", "verifyUser");
     $r->addRoute("logout", "POST", "loginController", "logout");
     #admin/juego
     $r->addRoute("admin", "GET", "adminController", "mostrarAdmin");
-    $r->addRoute("agregar", "POST", "adminController", "agregarJuego");#crea los juegos con la categoria pero el join esta mal echo y la fk siempre es 0
-    $r->addRoute("editar/:ID", "GET", "adminController", "editar");##falta acomodar
+    $r->addRoute("agregar", "POST", "adminController", "agregarJuego");
+    $r->addRoute("editar/:ID", "GET", "adminController", "editar");
     $r->addRoute("borrar/:ID", "GET", "adminController", "borrar");
-    $r->addRoute("confirmar/:ID", "POST", "adminController", "confirmar");#falta acomodar
+    $r->addRoute("confirmar/:ID", "POST", "adminController", "confirmar");
     #admin/categoria
     $r->addRoute("borrarCategoria/:ID", "GET", "adminController", "borrarCategoria");#borra igual. no importa si hay juegos con esa categoria
     $r->addRoute("agregarCategoria", "POST", "adminController", "agregarCategoria");
-    $r->addRoute("editarCategoria/:ID", "GET", "adminController", "editarCategoria");#falta hacer
+    $r->addRoute("editarCategoria/:ID", "GET", "adminController", "editarCategoria");
+    $r->addRoute("confirmarCategoria/:ID", "POST", "adminController", "confirmarCategoria");
+
 
     /////////////////////////////////////////////////////
     //Ruta por defecto.

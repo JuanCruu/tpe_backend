@@ -15,9 +15,17 @@ class viewAdmin{
         $this->smarty->display('templates/admin.tpl');
      }
     
-    public function formularioEditar($eljuego){
+    public function formularioEditar($eljuego,$categorias){
      $this->smarty->assign('juego',$eljuego);
+     $this->smarty->assign('categorias',$categorias);
      $this->smarty->display('templates/form.editar.tpl');   
+
+
+    }
+    public function formCategoria($idGenero){
+     $this->smarty->assign('genero',$idGenero);
+     $this->smarty->display('templates/form.editar.categoria.tpl');   
+
     }
    
 }

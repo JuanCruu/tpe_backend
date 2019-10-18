@@ -7,7 +7,7 @@ class viewHome{
          $this->smarty= new Smarty();
          $this->smarty->assign('basehref', BASE_URL);
      }
-     public function showTask($juegos,$categorias){
+     public function showGames($juegos,$categorias){
           $this->smarty->assign('categorias',$categorias);
           
           $this->smarty->assign('datos',$juegos);
@@ -15,7 +15,7 @@ class viewHome{
    }
    function mostrarTareas(){
     $tareas = $this->model->getAll();
-    $this->view->showTask($tareas);
+    $this->view->showGames($tareas);
 
     }
    public function verJuego($juego){

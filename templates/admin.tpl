@@ -45,9 +45,9 @@
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Categoria</label>
                                 <select class="form-control" id="categoria" name="categoria">
-                                {foreach $categorias as $tarea}
+                                {foreach $categorias as $genero}
                             
-                                <option>{$tarea->nombre}</option>
+                                <option value="{$genero->id_genero}">{$genero->nombre}</option>
                                     
                         
                                 {/foreach}
@@ -65,9 +65,9 @@
                 <div class="elformularioensi">
                     <h1>lista de juegos</h1>
                     <ul class="list-group">
-                        {foreach $datos as $tarea}
-                            <li class="list-group-item"><h5>{$tarea->nombre}</h5><a href="borrar/{$tarea->id}">/borrar/<a>
-                                <a href="editar/{$tarea->id}">editar {$tarea->id}</a></li> 
+                        {foreach $datos as $juego}
+                            <li class="list-group-item"><h5>{$juego->nombre}</h5><a href="borrar/{$juego->id}">/borrar/<a>
+                                <a href="editar/{$juego->id}">editar {$juego->id}</a></li> 
                         {/foreach}
                     </ul>    
                 </div>     
@@ -85,10 +85,10 @@
                     </form>
                     <h1>_|_Categorias_|_</h1>
                     <ul class="list-group">
-                        {foreach $categorias as $tarea}
+                        {foreach $categorias as $genero}
                             <li class="list-group-item">
-                                <h5>{$tarea->nombre}</h5><a href="borrarCategoria/{$tarea->id_genero}">/borrar/<a>
-                                    <a href="editarCategoria/{$tarea->nombre}">editar </a></li> 
+                                <h5>{$genero->nombre}</h5><a href="borrarCategoria/{$genero->id_genero}">/borrar/<a>
+                                    <a href="editarCategoria/{$genero->id_genero}">editar </a></li> 
                             </li> 
                         {/foreach}
                     </ul> 

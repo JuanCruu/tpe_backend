@@ -20,14 +20,12 @@
         <div class="form-group">
             <label for="exampleFormControlSelect1">Categoria</label>
             <select class="form-control" id="categoria" name="categoria">
-            <option>shooter</option>
-            <option>carrera</option>
-            <option>lucha</option>
-            <option>mundo abierto</option>
-            <option>indie</option>
-            <option>estrategia</option>
+                {foreach $categorias as $genero}
+                    <option value="{$genero->id_genero}">{$genero->nombre}</option>
+                {/foreach}
             </select>
         </div>
+                    
         
         <div class="form-group">
             <label for="exampleFormControlTextarea1">descripcion</label>

@@ -30,7 +30,7 @@ class juegoModel{
         var_dump($query->errorinfo());
     }
     function getFor($nombre){
-        $query = $this->db->prepare('SELECT j.* FROM juego AS j JOIN categoria as c ON j.id_genero_fk = c.id_genero WHERE c.nombre = ?');
+        $query = $this->db->prepare('SELECT j.* FROM juego AS j JOIN genero as c ON j.id_genero_fk = c.id_genero WHERE c.nombre = ?');
         $query->execute(array($nombre));
         return $query->fetchAll(PDO::FETCH_OBJ);
     }

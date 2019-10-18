@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-10-2019 a las 06:37:11
+-- Tiempo de generación: 18-10-2019 a las 20:33:20
 -- Versión del servidor: 10.1.40-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -38,10 +38,9 @@ CREATE TABLE `genero` (
 --
 
 INSERT INTO `genero` (`id_genero`, `nombre`) VALUES
-(48, 'asdasd'),
-(49, 'xcxc'),
-(50, 'xxxx'),
-(51, 'gggg');
+(58, 'my perro'),
+(59, 'gatetes'),
+(62, 'tutu');
 
 -- --------------------------------------------------------
 
@@ -64,8 +63,11 @@ CREATE TABLE `juego` (
 --
 
 INSERT INTO `juego` (`id`, `nombre`, `descripcion`, `precio`, `imagen`, `trailer`, `id_genero_fk`) VALUES
-(56, 'xxxxxxxxx', '', 0, '', '', 0),
-(57, 'sdsd', '', 0, '', '', 0);
+(3, 'drgdrg', '', 0, '', '', 57),
+(4, 'firulais2', '', 0, '', '', 59),
+(5, 'michi', '', 0, '', '', 59),
+(6, 'papa', '', 0, '', '', 60),
+(7, 'jack', '', 0, '', '', 58);
 
 -- --------------------------------------------------------
 
@@ -110,13 +112,13 @@ ALTER TABLE `juego`
 -- AUTO_INCREMENT de la tabla `genero`
 --
 ALTER TABLE `genero`
-  MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT de la tabla `juego`
 --
 ALTER TABLE `juego`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Restricciones para tablas volcadas

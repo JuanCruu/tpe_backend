@@ -22,10 +22,18 @@
             $query = $this->db2->prepare('INSERT INTO genero (nombre) VALUE(?)');
             $query->execute([ $nombre]);
         }
-        function editarCategoria($nombre,$id){
-            $query = $this->db2->prepare('UPDATE genero SET nombre= ?,  WHERE id_genero = ?');
-            $query->execute(array($nombre,$id));
+        function updateCategoria($id,$titulo){
+            $query = $this->db2->prepare('UPDATE genero SET nombre= ? WHERE id_genero = ?');
+            $query->execute(array($titulo,$id));
             var_dump($query->errorinfo());
         }
+        function  getIdcategorias($id){
+            $query = $this->db2->prepare('SELECT * FROM genero where id_genero =?');
+            $query->execute(array($id));
+            return $query->fetch(PDO::FETCH_OBJ);
+
+
+        }
+        
     }
     ?>
