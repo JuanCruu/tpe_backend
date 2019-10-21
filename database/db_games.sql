@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.5
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-10-2019 a las 20:33:20
--- Versión del servidor: 10.1.40-MariaDB
--- Versión de PHP: 7.3.5
+-- Tiempo de generación: 21-10-2019 a las 15:49:12
+-- Versión del servidor: 10.1.25-MariaDB
+-- Versión de PHP: 5.6.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -38,9 +38,9 @@ CREATE TABLE `genero` (
 --
 
 INSERT INTO `genero` (`id_genero`, `nombre`) VALUES
-(58, 'my perro'),
-(59, 'gatetes'),
-(62, 'tutu');
+(64, 'cccccccccc'),
+(65, 'aaaaaaa'),
+(66, 'perro');
 
 -- --------------------------------------------------------
 
@@ -63,11 +63,9 @@ CREATE TABLE `juego` (
 --
 
 INSERT INTO `juego` (`id`, `nombre`, `descripcion`, `precio`, `imagen`, `trailer`, `id_genero_fk`) VALUES
-(3, 'drgdrg', '', 0, '', '', 57),
-(4, 'firulais2', '', 0, '', '', 59),
-(5, 'michi', '', 0, '', '', 59),
-(6, 'papa', '', 0, '', '', 60),
-(7, 'jack', '', 0, '', '', 58);
+(9, 'zxzxzx', '', 0, '', '', 64),
+(10, 'qwqwqwq', '', 0, '', '', 65),
+(11, 'ssss', '', 0, '', '', 66);
 
 -- --------------------------------------------------------
 
@@ -102,7 +100,8 @@ ALTER TABLE `genero`
 -- Indices de la tabla `juego`
 --
 ALTER TABLE `juego`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `id_genero_fk` (`id_genero_fk`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -112,14 +111,12 @@ ALTER TABLE `juego`
 -- AUTO_INCREMENT de la tabla `genero`
 --
 ALTER TABLE `genero`
-  MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
-
+  MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 --
 -- AUTO_INCREMENT de la tabla `juego`
 --
 ALTER TABLE `juego`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- Restricciones para tablas volcadas
 --
