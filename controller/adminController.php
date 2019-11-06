@@ -18,9 +18,10 @@ class adminController{
         $this->modeljuegos=new juegoModel();
         $this->view=new viewAdmin();
         $this->authHelper = new AuthHelper();
+        $this->authHelper-> checkLogeed();
     }
     function mostrarAdmin(){
-         $this->authHelper-> checkLogeed();
+        
          $juegos = $this->modeljuegos->getAll();
          $categorias=$this->categoriasModel->getCategorias();
          $this->view->admin($juegos,$categorias);
