@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-10-2019 a las 15:49:12
--- Versión del servidor: 10.1.25-MariaDB
--- Versión de PHP: 5.6.31
+-- Tiempo de generación: 06-11-2019 a las 21:16:07
+-- Versión del servidor: 10.1.40-MariaDB
+-- Versión de PHP: 7.3.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `db_games`
+-- Base de datos: `db_juego`
 --
 
 -- --------------------------------------------------------
@@ -40,7 +40,8 @@ CREATE TABLE `genero` (
 INSERT INTO `genero` (`id_genero`, `nombre`) VALUES
 (64, 'cccccccccc'),
 (65, 'aaaaaaa'),
-(66, 'perro');
+(66, 'perro'),
+(68, 'reptiles');
 
 -- --------------------------------------------------------
 
@@ -53,7 +54,7 @@ CREATE TABLE `juego` (
   `nombre` varchar(50) NOT NULL,
   `descripcion` varchar(400) NOT NULL,
   `precio` float NOT NULL,
-  `imagen` varchar(500) NOT NULL,
+  `imagen` text NOT NULL,
   `trailer` varchar(500) NOT NULL,
   `id_genero_fk` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -63,9 +64,9 @@ CREATE TABLE `juego` (
 --
 
 INSERT INTO `juego` (`id`, `nombre`, `descripcion`, `precio`, `imagen`, `trailer`, `id_genero_fk`) VALUES
-(9, 'zxzxzx', '', 0, '', '', 64),
-(10, 'qwqwqwq', '', 0, '', '', 65),
-(11, 'ssss', '', 0, '', '', 66);
+(9, 'zxzxzx', '', 0, 'img/juego/5dc327b09501a.jpg', '', 64),
+(10, 'Screeeam confusion', '', 0, '', '', 64),
+(16, 'bananaconfunidida 2', '', 0, 'img/juego/5dc3293e9c460.jpg', '', 64);
 
 -- --------------------------------------------------------
 
@@ -111,12 +112,14 @@ ALTER TABLE `juego`
 -- AUTO_INCREMENT de la tabla `genero`
 --
 ALTER TABLE `genero`
-  MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+
 --
 -- AUTO_INCREMENT de la tabla `juego`
 --
 ALTER TABLE `juego`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
 --
 -- Restricciones para tablas volcadas
 --

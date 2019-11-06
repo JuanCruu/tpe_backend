@@ -5,7 +5,7 @@
         private $db2;
 
         public function __construct(){
-            $this->db2= new PDO ('mysql:host=localhost;dbname=db_games;charset=utf8', 'root', '');
+            $this->db2= new PDO ('mysql:host=localhost;dbname=db_juego;charset=utf8', 'root', '');
         }
         public function getCategorias() {
             

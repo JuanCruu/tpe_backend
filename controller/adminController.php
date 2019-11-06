@@ -27,16 +27,25 @@ class adminController{
         }
     ///#juegos/////////////////////////////////////////////////////
     function agregarJuego(){
-       #var_dump($_POST['categoria']);
+       
        $titulo = $_POST['titulo'];
        $descripcion = $_POST['descripcion'];
        $precio = $_POST['precio'];
        $categoria=$_POST['categoria'];
-       $imagen=$_POST['imagen'];
+       #$imagen=$_POST['imagen'];
        $link=$_POST['link'];
         if(isset($_POST['titulo'])){
-            $this->modeljuegos->crear( $titulo,$descripcion,$precio,$categoria,$imagen,$link);
-            header ("Location: admin");
+
+            if($_FILES['input_name']['type'] == "image/jpg" || $_FILES['input_name']['type'] == "image/jpeg" 
+            || $_FILES['input_name']['type'] == "image/png" ) {
+            
+                $imagen=$_FILES['input_name']['tmp_name'];
+                $this->modeljuegos->crear( $titulo,$descripcion,$precio,$categoria,$imagen,$link);
+                header ("Location: admin");
+            }
+
+
+            
         }
     }
     function borrar($params = NULL){
@@ -60,13 +69,20 @@ class adminController{
            $descripcion = $_POST['descripcion'];
            $precio = $_POST['precio'];
            $categoria=$_POST['categoria'];
-           $imagen=$_POST['imagen'];
+           #$imagen=$_POST['imagen'];
            $link=$_POST['link'];
            var_dump($_POST);
-           $this->modeljuegos->editarJuego( $titulo,$precio,$imagen,$link,$categoria,$descripcion,$id);
-           header ("Location: ../admin");
-       }
+
+           if($_FILES['input_name']['type'] == "image/jpg" || $_FILES['input_name']['type'] == "image/jpeg" 
+           || $_FILES['input_name']['type'] == "image/png" ) {
+               $imagen=$_FILES['input_name']['tmp_name'];
+            }    
+            $this->modeljuegos->editarJuego( $titulo,$precio,$imagen,$link,$categoria,$descripcion,$id);
+            header ("Location: ../admin");
+           
+
    }
+}
    
   ///#categorias/////////////////////////////////////////////////////////////
 

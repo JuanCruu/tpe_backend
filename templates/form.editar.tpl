@@ -1,6 +1,6 @@
 {include 'templates/header.tpl'}
 <body>
-    <form method="POST" action="confirmar/{$juego->id}" >
+    <form method="POST" action="confirmar/{$juego->id}" enctype="multipart/form-data">
         <div class="form-group">
             <label >nombre</label>
             <input type="text" class="form-control" id="titulo" name="titulo" value="{$juego->nombre}">
@@ -10,8 +10,11 @@
             <input type="number" class="form-control" id="precio" name="precio" value="{$juego->precio}">
         </div>
         <div class="form-group">
-            <label for="exampleFormControlInput1">imagen</label>
-            <input type="text" class="form-control" id="imagen" name="imagen" placeholder="link de la imagen"value="{$juego->imagen}">
+            <label for="exampleFormControlInput1">Nueva imagen</label>
+            <div class="form-group">
+                <input type="file" name="input_name" id="imageToUpload">
+            </div>
+                                
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">trailer</label>

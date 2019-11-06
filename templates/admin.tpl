@@ -25,7 +25,7 @@
             <div class="formularioAdmin">
                 <div class="elformularioensi">
                 <h1>Add juego</h1>
-                        <form method="post" action="agregar" >
+                        <form method="post" action="agregar" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label >nombre</label>
                                 <input type="text" class="form-control" id="titulo" name="titulo">
@@ -36,8 +36,9 @@
                             </div>
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">imagen</label>
-                                <input type="text" class="form-control" id="imagen" name="imagen" placeholder="link de la imagen">
+                                <input type="file" name="input_name" id="imageToUpload">
                             </div>
+                            
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">trailer</label>
                                 <input type="text" class="form-control" id="link" name="link" placeholder="link del trailer">

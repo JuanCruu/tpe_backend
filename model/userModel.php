@@ -4,7 +4,7 @@ class userModel{
     private $db;
 
     public function __construct(){
-        $this->db= new PDO ('mysql:host=localhost;dbname=db_games;charset=utf8', 'root', '');
+        $this->db= new PDO ('mysql:host=localhost;dbname=db_juego;charset=utf8', 'root', '');
     }
 
 

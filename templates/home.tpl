@@ -30,7 +30,7 @@
                             <div class="imagen">
                                 <h3>{$juego->nombre} </h3>
                                 <h5 class="precio"> $   {$juego->precio}</h5>
-                                <img class="imagenhome" src="{$juego->imagen}">
+                                <img class="imagenhome" src="{$juego->imagen}" alt="{$juego->imagen}">
                             </div>
                         </a>
                     </div>
