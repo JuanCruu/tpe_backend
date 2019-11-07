@@ -18,6 +18,35 @@ class loginController{
     public function showLogin(){
         $this->view->showLogin();
     }
+    public function showformularioRegistro(){
+        $this->view->showformularioRegistro();
+    }
+    public function crearUsuario(){
+        
+        $username = $_POST['username'];
+        $password = password_hash($_POST['password']);
+        $passwordR = password_hash($_POST['passwordR']);
+        
+        if(!empty($username)&&!empty($password)&&!empty($passwordR)){
+            $lugar=$this->model->getbyUsername($username);
+            if(($lugar==false)&&(password_verify($password, $passwordR))){
+                $this->model->CrearUsuario($username,$password,$passwordR);
+                header('Location: ' . VER);
+            }elseif($lugar!=false){
+                $this->view->showformularioRegistro("El nombre de usuario ya esta registrado");
+                
+            }else{
+                $this->view->showformularioRegistro("las contrasenias no son iguales");
+
+            }
+        }
+    else{
+        $this->view->showformularioRegistro("Rellene todos los campos");
+    }
+
+    }
+
+    
     public function verifyUser(){
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -35,7 +64,20 @@ class loginController{
         $this->authHelper->logout();
         header('Location: ' . LOGIN);
     }
+}
+                
+                
+
+                 
+                     
+            
+?>
+           
+
+
+
+                   
+
+
 
     
-}
-?>

@@ -12,7 +12,9 @@
                 </div>
             </div>
             <div>
-                <a href="login"> <button>login<button> </a> 
+                <a href="login"> <button>log in<button> </a> 
+                <a href="registrar"> <button>log up<button> </a> 
+
                 <a href="admin"><button>admin<button></a>
             </div>
             <button id="boton_index" type="button">

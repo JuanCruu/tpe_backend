@@ -16,6 +16,10 @@
     $r->addRoute("juego/:ID", "GET", "homeController", "juego");
     $r->addRoute("buscar/:ID", "GET", "homeController", "buscar");
     #login
+    
+    
+    $r->addRoute("CrearUsuario", "POST", "loginController", "crearUsuario");
+    $r->addRoute("registrar", "GET", "loginController", "showformularioRegistro");
     $r->addRoute("login", "GET", "loginController", "showLogin");
     $r->addRoute("verify", "POST", "loginController", "verifyUser");
     $r->addRoute("logout", "POST", "loginController", "logout");
