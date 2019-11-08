@@ -1,8 +1,10 @@
 <?php
     include_once('./model/categoriasModel.php');
     include_once('./model/juegoModel.php');
+    include_once('./model/userModel.php');
     include_once('./view/viewAdmin.php');
     include_once('./helpers/authHelper.php');
+
     #se encarga de la logica de la seccion administrador.
 
 class adminController{
@@ -11,12 +13,14 @@ class adminController{
     private $modeljuegos;
     private $view;
     private $authHelper;
+    private $usermodel;
+
 
     function __construct(){
-
         $this->categoriasModel=new categoriasModel();
         $this->modeljuegos=new juegoModel();
         $this->view=new viewAdmin();
+        $this->usermodel= new userModel();
         $this->authHelper = new AuthHelper();
         $this->authHelper-> checkLogeed();
     }
@@ -24,7 +28,9 @@ class adminController{
         
          $juegos = $this->modeljuegos->getAll();
          $categorias=$this->categoriasModel->getCategorias();
-         $this->view->admin($juegos,$categorias);
+         $usuarios=$this->usermodel->ObtenerUsuarios();
+        
+         $this->view->admin($juegos,$categorias,$usuarios);
         }
     ///#juegos/////////////////////////////////////////////////////
     function agregarJuego(){
@@ -112,7 +118,14 @@ class adminController{
        }
     }
             
+    ///#usuario///////////////////////
+    public function borrarUsuario($params=null){
+      $usuario=$params[':ID'];
+      $this->usermodel->borrarUsuario($usuario);
+      header ("Location: ../admin");
 
+      
+    }
         
 
 

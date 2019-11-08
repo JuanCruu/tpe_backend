@@ -301,14 +301,14 @@ label{
     display: flex;
      
     flex-direction: row;
-    width: 1000px;  
+    width: 1500px;  
     background-color: rgb(124, 124, 124);
 }
 .fomurlarioblanco{
     background-color: azure;
 }
 .elformularioensi{
-    width: 400px;
+    width: 1000px;
 }
 .centrarhome{
     display: flex;

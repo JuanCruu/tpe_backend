@@ -34,7 +34,8 @@
     $r->addRoute("agregarCategoria", "POST", "adminController", "agregarCategoria");
     $r->addRoute("editarCategoria/:ID", "GET", "adminController", "editarCategoria");
     $r->addRoute("confirmarCategoria/:ID", "POST", "adminController", "confirmarCategoria");
-
+    #admin/usuario
+    $r->addRoute("borrarUsuario/:ID","GET","adminController","borrarUsuario");
 
     /////////////////////////////////////////////////////
     //Ruta por defecto.

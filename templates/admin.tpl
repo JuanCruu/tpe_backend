@@ -63,15 +63,7 @@
                         </form>
 
                 </div>
-                <div class="elformularioensi">
-                    <h1>lista de juegos</h1>
-                    <ul class="list-group">
-                        {foreach $datos as $juego}
-                            <li class="list-group-item"><h5>{$juego->nombre}</h5><a href="borrar/{$juego->id}">/borrar/<a>
-                                <a href="editar/{$juego->id}">editar {$juego->id}</a></li> 
-                        {/foreach}
-                    </ul>    
-                </div>     
+                
                      
                 <div>
                     <h1>Add Categoria</h1>
@@ -93,7 +85,29 @@
                             </li> 
                         {/foreach}
                     </ul> 
+                    
                 </div>
+                 <div class="elformularioensi">
+                    <h1>lista de juegos</h1>
+                    <ul class="list-group">
+                        {foreach $datos as $juego}
+                            <li class="list-group-item"><h5>{$juego->nombre}</h5><a href="borrar/{$juego->id}">/borrar/<a>
+                                <a href="editar/{$juego->id}">editar {$juego->id}</a></li> 
+                        {/foreach}
+                    </ul>    
+                </div>  
+                <div>
+                    <h1>Usuarios</h1>
+                    <ul class="list-group">
+                            {foreach $usuarios as $usuario}
+                                <li class="list-group-item">
+                                    <h5>{$usuario->user}</h5><a href="borrarUsuario/{$usuario->user}">/borrar/<a>
+                                         
+                                </li> 
+                            {/foreach}
+                    </ul>
+                </div>
+                  
             </div>
                  
                   

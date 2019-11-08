@@ -24,23 +24,32 @@ class loginController{
     public function crearUsuario(){
         
         $username = $_POST['username'];
-        $password = password_hash($_POST['password']);
-        $passwordR = password_hash($_POST['passwordR']);
+        $password = $_POST['password'];
+        $passwordR = $_POST['passwordR'];
+       
         
         if(!empty($username)&&!empty($password)&&!empty($passwordR)){
+
             $lugar=$this->model->getbyUsername($username);
-            if(($lugar==false)&&(password_verify($password, $passwordR))){
-                $this->model->CrearUsuario($username,$password,$passwordR);
-                header('Location: ' . VER);
+
+            if(($lugar==false)&&($password==$passwordR)){
+                
+                $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
+               # $passwordR = password_hash($_POST['passwordR'],PASSWORD_DEFAULT);
+               $this->model->CrearUsuario($username,$password,);
+               header('Location: ' . VER);
+               
+
             }elseif($lugar!=false){
                 $this->view->showformularioRegistro("El nombre de usuario ya esta registrado");
-                
+                #Si encontro a un usuario con ese nombre en la BDD  
             }else{
                 $this->view->showformularioRegistro("las contrasenias no son iguales");
-
+                
             }
         }
     else{
+        #entra aca por descarte(casualmente cuando,no se rellenaron todos los imputs)
         $this->view->showformularioRegistro("Rellene todos los campos");
     }
 
