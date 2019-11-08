@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-11-2019 a las 21:16:07
+-- Tiempo de generación: 09-11-2019 a las 00:29:14
 -- Versión del servidor: 10.1.40-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -38,10 +38,9 @@ CREATE TABLE `genero` (
 --
 
 INSERT INTO `genero` (`id_genero`, `nombre`) VALUES
-(64, 'cccccccccc'),
-(65, 'aaaaaaa'),
 (66, 'perro'),
-(68, 'reptiles');
+(68, 'reptiles'),
+(69, 'gatitos');
 
 -- --------------------------------------------------------
 
@@ -64,9 +63,9 @@ CREATE TABLE `juego` (
 --
 
 INSERT INTO `juego` (`id`, `nombre`, `descripcion`, `precio`, `imagen`, `trailer`, `id_genero_fk`) VALUES
-(9, 'zxzxzx', '', 0, 'img/juego/5dc327b09501a.jpg', '', 64),
-(10, 'Screeeam confusion', '', 0, '', '', 64),
-(16, 'bananaconfunidida 2', '', 0, 'img/juego/5dc3293e9c460.jpg', '', 64);
+(1, 'michi 1', '', 0, 'img/juego/5dc5cbe69bdbb.jpg', '', 69),
+(2, 'sapito 4', '', 0, 'img/juego/5dc5cbfd369c6.jpg', '', 68),
+(3, 'esto no es un perro', '', 0, 'img/juego/5dc5cc21371d2.jpg', '', 66);
 
 -- --------------------------------------------------------
 
@@ -75,17 +74,20 @@ INSERT INTO `juego` (`id`, `nombre`, `descripcion`, `precio`, `imagen`, `trailer
 --
 
 CREATE TABLE `usuarios` (
-  `user` text NOT NULL,
-  `password` text NOT NULL
+  `user` varchar(500) CHARACTER SET latin1 COLLATE latin1_bin NOT NULL,
+  `password` text NOT NULL,
+  `admin` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`user`, `password`) VALUES
-('eljuancruu22@gmail.com', '416327321q'),
-('pepe', '$2y$10$HnwGNZ2BStrDayt5q.vIhu23BU2I8xqHSLL0H1S70NlIfIXWXloyq');
+INSERT INTO `usuarios` (`user`, `password`, `admin`) VALUES
+('juan', '$2y$10$QqPJdp0MPoAYcH.G.sJzXuEexhNvAtnZKeiEyMF6w6sHfJ/O3k31a', 0),
+('pato', '', 0),
+('pepe', '$2y$10$SR.q/N/15qFClD1d0TybReID2trM/bQTSSzRL3tBescUc9ppr9Tke', 1),
+('perro', '$2y$10$TqrgdFdYmg1nXZHHZl.dL.2Km1p8vITfLYTiBR/U0mEX.Y6QsDxmm', 0);
 
 --
 -- Índices para tablas volcadas
@@ -105,6 +107,12 @@ ALTER TABLE `juego`
   ADD KEY `id_genero_fk` (`id_genero_fk`);
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD UNIQUE KEY `user` (`user`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -112,13 +120,13 @@ ALTER TABLE `juego`
 -- AUTO_INCREMENT de la tabla `genero`
 --
 ALTER TABLE `genero`
-  MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
 
 --
 -- AUTO_INCREMENT de la tabla `juego`
 --
 ALTER TABLE `juego`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
