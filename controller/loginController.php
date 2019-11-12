@@ -36,7 +36,7 @@ class loginController{
                 
                 $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
                # $passwordR = password_hash($_POST['passwordR'],PASSWORD_DEFAULT);
-               $this->model->CrearUsuario($username,$password,);
+               $this->model->CrearUsuario($username,$password);
                header('Location: ' . VER);
                
 
