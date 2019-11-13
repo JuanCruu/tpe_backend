@@ -26,18 +26,24 @@ class loginController{
         $username = $_POST['username'];
         $password = $_POST['password'];
         $passwordR = $_POST['passwordR'];
+        $answer = $_POST['Pregunta'];
+
        
         
-        if(!empty($username)&&!empty($password)&&!empty($passwordR)){
+        if(!empty($username)&&!empty($password)&&!empty($passwordR)&&!empty($answer)){
 
             $lugar=$this->model->getbyUsername($username);
 
             if(($lugar==false)&&($password==$passwordR)){
                 
                 $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
-               # $passwordR = password_hash($_POST['passwordR'],PASSWORD_DEFAULT);
-               $this->model->CrearUsuario($username,$password);
-               header('Location: ' . VER);
+                $this->model->CrearUsuario($username,$password,$answer);
+                #//////////////////////////////////////////////////////////////////////
+                #una vez registrado el usuario vuelvo a buscar su nombre en la db para 
+                #retornar su nombre a la funcion login(que solo se activa si el parametro es un objeto)
+                $usuarioregistrado=$this->model->getbyUsername($username);
+                $this->authHelper->login($usuarioregistrado);
+                header('Location: ' . VER);
                
 
             }elseif($lugar!=false){
@@ -45,8 +51,8 @@ class loginController{
                 #Si encontro a un usuario con ese nombre en la BDD  
             }else{
                 $this->view->showformularioRegistro("las contrasenias no son iguales");
-                
             }
+                
         }
     else{
         #entra aca por descarte(casualmente cuando,no se rellenaron todos los imputs)
@@ -55,7 +61,6 @@ class loginController{
 
     }
 
-    
     public function verifyUser(){
         $username = $_POST['username'];
         $password = $_POST['password'];
@@ -64,15 +69,47 @@ class loginController{
        if (!empty($user) && password_verify($password, $user->password)){
            
             $this->authHelper->login($user);
-            header("Location:" .  ADMIN);
+            header("Location:" .  VER);
         } else {
             $this->view->showLogin("Login incorrecto");
         }
     }
     public function logout() {
         $this->authHelper->logout();
-        header('Location: ' . LOGIN);
+        header('Location: ' . VER);
     }
+    public function recuperacion(){
+        $this->view->showrecuperacion();
+    }
+    public function recuperar(){
+        
+        $username = $_POST['username'];
+        $password = $_POST['Newpassword'];
+        $passwordR = $_POST['NewpasswordR'];
+        $answer = $_POST['Pregunta'];
+
+        if(!empty($username)&&!empty($password)&&!empty($passwordR)&&!empty($answer)){
+
+            $Usuario=$this->model->getbyUsername($username);
+
+                if(($Usuario->user==$username)&&($password==$passwordR)&&($Usuario->answer==$answer)){
+                    $Newpassword = password_hash($password,PASSWORD_DEFAULT);
+                    $this->model->resetPassword($Newpassword,$username);
+                    #???????????????????????????????????????????????
+                    $usuarioregistrado=$this->model->getbyUsername($username);
+                    $this->authHelper->login($usuarioregistrado);
+                    header('Location: ' . VER);
+                }
+
+        }else{
+            $this->view->showrecuperacion("Rellenar todos los campos");
+
+        }
+
+    }
+
+    
+    
 }
                 
                 

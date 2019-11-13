@@ -19,6 +19,19 @@ class authHelper{
         session_start();
         session_destroy();
     }
+    public function checkSeason(){
+       
+
+            session_start();
+            if(!isset($_SESSION ['USERNAME'])){
+                session_destroy();
+                
+            }else{
+                return $_SESSION ['USERNAME'];
+            }
+        
+        
+    }
     public function checkLogeed(){
         session_start();
         if(!isset($_SESSION ['USERNAME'])){

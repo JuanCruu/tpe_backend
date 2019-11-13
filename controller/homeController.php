@@ -11,17 +11,27 @@ class homeController{
     private $model;
     private $view;
     private $authHelper;
-
+    private $userModel;
     function __construct(){
+        $this->userModel=new userModel();
         $this->model=new juegoModel();
         $this->view=new viewHome();
         $this->authHelper = new AuthHelper();
         $this->categoriasModel=new categoriasModel();
     }
     function mostrarjuegos(){
+        $sesion=$this->authHelper->checkSeason();
         $juegos = $this->model->getAll();
         $categorias=$this->categoriasModel->getCategorias();
-        $this->view->showGames($juegos,$categorias);
+        if($sesion){
+            $usuario=$this->userModel->getbyUsername($sesion);
+            $this->view->showGames($juegos,$categorias,$sesion,$usuario);
+        }else{
+
+            $this->view->showGames($juegos,$categorias,$sesion);
+        }
+
+
     }  
     function juego($params=NULL){
         $id=$params[':ID'];

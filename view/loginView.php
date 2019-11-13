@@ -21,5 +21,13 @@ class loginView {
         $this->smarty->display('templates/registro.tpl');
 
     }
+    public function showrecuperacion($error=null){
+        $this->smarty->assign('titulo', 'Recuperar cuenta');
+        $this->smarty->assign('error', $error);
+        $this->smarty->display('templates/recuperarcuenta.tpl');
+
+
+    }
+        
 
 }

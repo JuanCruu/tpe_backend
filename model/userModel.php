@@ -21,15 +21,27 @@ class userModel{
 
         return $query->fetch(PDO::FETCH_OBJ);
     }
-    public function CrearUsuario($username,$password,$admin=0){
-        
-        $query= $this->db->prepare('INSERT INTO usuarios (user,password,admin) VALUE(?,?,?)');
-        $query->execute([$username,$password,$admin]);
+    public function CrearUsuario($username,$password,$answer){
+        $admin=0;
+        $query= $this->db->prepare('INSERT INTO usuarios (user,password,admin,answer) VALUE(?,?,?,?)');
+        $query->execute([$username,$password,$admin,$answer]);
     }
     public function BorrarUsuario($usuario){
         $query = $this->db->prepare('DELETE FROM usuarios WHERE user = ?');
         $query->execute([$usuario]);
     }
+    public function Promover_Destituir($usuario,$privilegio){
+        $query = $this->db->prepare('UPDATE  usuarios SET admin = ?  WHERE user = ?');
+        $query->execute([$privilegio,$usuario]);
+    }
+    public function resetPassword($password,$username){
+        $query = $this->db->prepare('UPDATE  usuarios SET password = ?  WHERE user = ?');
+        $query->execute([$password,$username]);
+
+    }
+
+        
+
     
 }
 ?>

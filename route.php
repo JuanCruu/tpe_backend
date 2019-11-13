@@ -17,12 +17,13 @@
     $r->addRoute("buscar/:ID", "GET", "homeController", "buscar");
     #login
     
-    
+    $r->addRoute("recuperar","POST","loginController","recuperar");
+    $r->addRoute("recuperacion","GET","loginController","recuperacion");
     $r->addRoute("CrearUsuario", "POST", "loginController", "crearUsuario");
     $r->addRoute("registrar", "GET", "loginController", "showformularioRegistro");
     $r->addRoute("login", "GET", "loginController", "showLogin");
     $r->addRoute("verify", "POST", "loginController", "verifyUser");
-    $r->addRoute("logout", "POST", "loginController", "logout");
+    $r->addRoute("logout", "GET", "loginController", "logout");
     #admin/juego
     $r->addRoute("admin", "GET", "adminController", "mostrarAdmin");
     $r->addRoute("agregar", "POST", "adminController", "agregarJuego");
@@ -30,12 +31,14 @@
     $r->addRoute("borrar/:ID", "GET", "adminController", "borrar");
     $r->addRoute("confirmar/:ID", "POST", "adminController", "confirmar");
     #admin/categoria
-    $r->addRoute("borrarCategoria/:ID", "GET", "adminController", "borrarCategoria");#borra igual. no importa si hay juegos con esa categoria
+    $r->addRoute("borrarCategoria/:ID", "GET", "adminController", "borrarCategoria");
     $r->addRoute("agregarCategoria", "POST", "adminController", "agregarCategoria");
     $r->addRoute("editarCategoria/:ID", "GET", "adminController", "editarCategoria");
     $r->addRoute("confirmarCategoria/:ID", "POST", "adminController", "confirmarCategoria");
     #admin/usuario
     $r->addRoute("borrarUsuario/:ID","GET","adminController","borrarUsuario");
+    $r->addRoute("Promover_Destituir/:ID","GET","adminController","Promover_Destituir");
+
 
     /////////////////////////////////////////////////////
     //Ruta por defecto.

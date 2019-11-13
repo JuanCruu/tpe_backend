@@ -9,22 +9,21 @@
                         </form>
                         </div>
                         <div class="ml-auto">
-                        <form method="POST" action="logout">
-                            <button>Cerrar sesión</button>
-
-                        </form>
+                        <a href="logout">  <button>Cerrar sesión</button></a>
                           </div>
-                    
-                    
 
                     <button id="boton_index" type="button">
                         <span  class="navbar-toggler-icon"></span>
                     </button>
-                
             </nav>
+                    
+                    
+
+                
             <div class="formularioAdmin">
                 <div class="elformularioensi">
-                <h1>Add juego</h1>
+                    <div>
+                        <h1>Add juego</h1>
                         <form method="post" action="agregar" enctype="multipart/form-data">
                             <div class="form-group">
                                 <label >nombre</label>
@@ -61,10 +60,38 @@
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
+                    </div>
+                    <div>
+                     <h1>lista de juegos</h1>
+                    <ul class="list-group">
+                        {foreach $datos as $juego}
+                            <li class="list-group-item"><h5>{$juego->nombre}</h5><a href="borrar/{$juego->id}">/borrar/<a>
+                                <a href="editar/{$juego->id}">editar {$juego->id}</a></li> 
+                        {/foreach}
+                    </ul>  
+                    </div>
+                    <div>
+                        <h1>Usuarios</h1>
+                        <ul class="list-group">
+                                {foreach $usuarios as $usuario}
+                                    <li class="list-group-item">
+                                       
+                                        {if $usuario->admin==1}
+                                            <h5>{$usuario->user} <span>/Admin</span></h5>
+                                            <a href="Promover_Destituir/{$usuario->user}"><button>Volver Usuario</button><a>
+                                            {else}
+                                            <h5>{$usuario->user}</h5>
+                                            <a href="borrarUsuario/{$usuario->user}"><button>borrar</button><a>
+                                            <a href="Promover_Destituir/{$usuario->user}"><button>Promover</button><a>
+                                        {/if}
+                                            
+                                    </li> 
+                                {/foreach}
 
+                        </ul>
+                                            
                 </div>
-                
-                     
+                </div>
                 <div>
                     <h1>Add Categoria</h1>
                     <form method="post" action="agregarCategoria" >
@@ -87,31 +114,16 @@
                     </ul> 
                     
                 </div>
-                 <div class="elformularioensi">
-                    <h1>lista de juegos</h1>
-                    <ul class="list-group">
-                        {foreach $datos as $juego}
-                            <li class="list-group-item"><h5>{$juego->nombre}</h5><a href="borrar/{$juego->id}">/borrar/<a>
-                                <a href="editar/{$juego->id}">editar {$juego->id}</a></li> 
-                        {/foreach}
-                    </ul>    
-                </div>  
-                <div>
-                    <h1>Usuarios</h1>
-                    <ul class="list-group">
-                            {foreach $usuarios as $usuario}
-                                <li class="list-group-item">
-                                    <h5>{$usuario->user}</h5><a href="borrarUsuario/{$usuario->user}">/borrar/<a>
-                                         
-                                </li> 
-                            {/foreach}
-                    </ul>
-                </div>
-                  
+                
             </div>
-                 
-                  
-            
             
         </body>
         </html>'
+                    
+                
+                     
+                
+                
+                 
+                  
+            

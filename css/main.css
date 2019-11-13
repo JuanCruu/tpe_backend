@@ -297,6 +297,10 @@ label{
 
 
 }
+.username{
+    color:white;
+    font-size: 20px;
+}
 .formularioAdmin{
     display: flex;
      
@@ -308,7 +312,7 @@ label{
     background-color: azure;
 }
 .elformularioensi{
-    width: 1000px;
+    width: 500px;
 }
 .centrarhome{
     display: flex;

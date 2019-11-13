@@ -11,11 +11,19 @@
                     {/foreach}
                 </div>
             </div>
-            <div>
-                <a href="login"> <button>log in<button> </a> 
-                <a href="registrar"> <button>log up<button> </a> 
+            <div class="ml-auto">
+                {if $sesion }
+                    <span class="username">{$usuario->user}</span>
+                    {if $usuario->admin==1}
+                        <a href="admin"><button>admin</button></a>
+                    {/if}
+                    
 
-                <a href="admin"><button>admin<button></a>
+                    <a href="logout">  <button>Cerrar sesión</button>
+                    {else}
+                    <a href="login"> <button>Log In</button> </a> 
+                    <a href="registrar"> <button>Sing Up</button> </a> 
+                {/if}
             </div>
             <button id="boton_index" type="button">
                 <span  class="navbar-toggler-icon"></span>
@@ -42,6 +50,20 @@
     
 {include 'templates/footer.tpl'}
                              
+                
+                    
+                    
+                        
+                    
+                    
+                    
+                    
+
+
+               
+                
+
+
                         
                             
                             

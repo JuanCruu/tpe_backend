@@ -124,8 +124,29 @@ class adminController{
       $this->usermodel->borrarUsuario($usuario);
       header ("Location: ../admin");
 
-      
     }
+    public function Promover_Destituir($params=null){
+        $usuario=$params[':ID'];
+        
+        $privilegio;#variable la cual contendra el valor booleano que tendra el usuario (si va ser admin o dejara de serlo)
+
+        #
+        $User=$this->usermodel->getbyUsername($usuario);
+        #para no hacer dos funciones exactamente iguales con un valor diferente pense en esto como una perilla de luz.
+        if( $User->admin==1){
+            $privilegio=0;
+        }elseif($User->admin==0){
+            $privilegio=1;
+        }
+        #si el usuario era un admnistrador dejara de serlo y perdera acceso a la zona de administracion y
+        #Si era usuario se volvera admnistrador;
+        #(esto ya del vamos no es nada seguro,un administrador podria volver a todos usuarios y ya nadie podria entrar a la zona de admnistracion para sacarle.
+        # es mas hasta el mismo se podria destituir solo y ya nadie podria administrar nada...)
+        $this->usermodel->Promover_Destituir($usuario,$privilegio);
+        header ("Location: ../admin");
+
+    }
+      
         
 
 

@@ -17,6 +17,12 @@
             <label>Repeat Password</label>
             <input type="password" name="passwordR" class="form-control" placeholder="Repeat Password">
         </div>
+        <div class="form-group">
+            <label>Pregunta de seguridad</label>
+            <P>Su mascota de la infacia</p>
+
+            <input type="text" name="Pregunta" class="form-control" placeholder="se utilizara en caso de perder su contraseña">
+        </div>
 
         {if $error}
         <div class="alert alert-danger" role="alert">

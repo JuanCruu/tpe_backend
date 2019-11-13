@@ -18,8 +18,11 @@
             {$error}
         </div>
         {/if}
-
-        <button type="submit" class="btn btn-primary">Ingresar</button>
+        <div>
+            <a href="recuperacion">Olvide mi contrasenia</a>
+        </div>
+        <button type="submit" class="btn btn-primary">Ingresar</button> 
+        
     </form>
 
 </div>

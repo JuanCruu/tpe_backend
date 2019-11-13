@@ -7,9 +7,10 @@ class viewHome{
          $this->smarty= new Smarty();
          $this->smarty->assign('basehref', BASE_URL);
      }
-     public function showGames($juegos,$categorias){
+     public function showGames($juegos,$categorias,$sesion=null,$usuario=null){
+          $this->smarty->assign('usuario',$usuario);
+          $this->smarty->assign('sesion',$sesion);
           $this->smarty->assign('categorias',$categorias);
-          
           $this->smarty->assign('datos',$juegos);
         $this->smarty->display('templates/home.tpl');
    }
