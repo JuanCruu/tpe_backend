@@ -45,12 +45,12 @@
                             <div class="form-group">
                                 <label for="exampleFormControlSelect1">Categoria</label>
                                 <select class="form-control" id="categoria" name="categoria">
-                                {foreach $categorias as $genero}
+                                    {foreach $categorias as $genero}
+                                
+                                    <option value="{$genero->id_genero}">{$genero->nombre}</option>
+                                        
                             
-                                <option value="{$genero->id_genero}">{$genero->nombre}</option>
-                                    
-                        
-                                {/foreach}
+                                    {/foreach}
                                 </select>
                             </div>
                             
