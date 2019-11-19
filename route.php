@@ -30,6 +30,8 @@
     $r->addRoute("editar/:ID", "GET", "adminController", "editar");
     $r->addRoute("borrar/:ID", "GET", "adminController", "borrar");
     $r->addRoute("confirmar/:ID", "POST", "adminController", "confirmar");
+    $r->addRoute("borrarimagen/:ID", "GET", "adminController", "borrarimagen");
+
     #admin/categoria
     $r->addRoute("borrarCategoria/:ID", "GET", "adminController", "borrarCategoria");
     $r->addRoute("agregarCategoria", "POST", "adminController", "agregarCategoria");

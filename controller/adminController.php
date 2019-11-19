@@ -90,7 +90,18 @@ class adminController{
 
    }
 }
-   
+   public function borrarimagen($params=null){
+        $id=$params[':ID'];
+        $imagen = $this->modeljuegos->getjuego($id);
+        var_dump($imagen->imagen);
+        unlink($imagen->imagen);
+
+        $this->modeljuegos->borrarimagen($id);
+        header ("Location: ../juego/".$id); 
+    }   
+
+
+
   ///#categorias/////////////////////////////////////////////////////////////
 
   function borrarCategoria($params=null){

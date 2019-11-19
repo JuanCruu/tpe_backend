@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-11-2019 a las 00:29:14
+-- Tiempo de generación: 19-11-2019 a las 23:34:38
 -- Versión del servidor: 10.1.40-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -25,6 +25,26 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `comentario`
+--
+
+CREATE TABLE `comentario` (
+  `id_comentario` int(11) NOT NULL,
+  `comentario` text NOT NULL,
+  `id_juego_fk` int(255) NOT NULL,
+  `id_usuario` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `comentario`
+--
+
+INSERT INTO `comentario` (`id_comentario`, `comentario`, `id_juego_fk`, `id_usuario`) VALUES
+(1, 'primer comentario hecho por api', 1, 'pepe');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `genero`
 --
 
@@ -40,7 +60,8 @@ CREATE TABLE `genero` (
 INSERT INTO `genero` (`id_genero`, `nombre`) VALUES
 (66, 'perro'),
 (68, 'reptiles'),
-(69, 'gatitos');
+(69, 'gatitos'),
+(70, 'tiros');
 
 -- --------------------------------------------------------
 
@@ -63,9 +84,10 @@ CREATE TABLE `juego` (
 --
 
 INSERT INTO `juego` (`id`, `nombre`, `descripcion`, `precio`, `imagen`, `trailer`, `id_genero_fk`) VALUES
-(1, 'michi 1', '', 0, 'img/juego/5dc5cbe69bdbb.jpg', '', 69),
-(2, 'sapito 4', '', 0, 'img/juego/5dc5cbfd369c6.jpg', '', 68),
-(3, 'esto no es un perro', '', 0, 'img/juego/5dc5cc21371d2.jpg', '', 66);
+(1, 'michi 1', '', 0, 'img/juego/5dd4329667acf.jpg', '', 69),
+(2, 'sapito 4', '', 0, 'img/juego/5dd432a25a2ba.jpg', '', 68),
+(3, 'esto no es un perro', '', 0, 'img/juego/5dd432b37b1fe.jpg', '', 70),
+(4, 'nuevo juego', '', 1000, 'img/juego/5dd432c217f69.jpg', '', 66);
 
 -- --------------------------------------------------------
 
@@ -76,22 +98,33 @@ INSERT INTO `juego` (`id`, `nombre`, `descripcion`, `precio`, `imagen`, `trailer
 CREATE TABLE `usuarios` (
   `user` varchar(500) CHARACTER SET latin1 COLLATE latin1_bin NOT NULL,
   `password` text NOT NULL,
-  `admin` tinyint(1) NOT NULL
+  `admin` tinyint(1) NOT NULL,
+  `answer` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`user`, `password`, `admin`) VALUES
-('juan', '$2y$10$QqPJdp0MPoAYcH.G.sJzXuEexhNvAtnZKeiEyMF6w6sHfJ/O3k31a', 0),
-('pato', '', 0),
-('pepe', '$2y$10$SR.q/N/15qFClD1d0TybReID2trM/bQTSSzRL3tBescUc9ppr9Tke', 1),
-('perro', '$2y$10$TqrgdFdYmg1nXZHHZl.dL.2Km1p8vITfLYTiBR/U0mEX.Y6QsDxmm', 0);
+INSERT INTO `usuarios` (`user`, `password`, `admin`, `answer`) VALUES
+('juancruz', '$2y$10$F/f4jsq/v/YciPV1nn5LvORKMjqKaa4ShNuMQWdIoYVLuOIbiqw8O', 1, ''),
+('maria', '$2y$10$T17.jO5KaERsDJw1SBcMw.qd8QiJxg.ZUfAEPTQr8e5eWXS9v0C4a', 0, ''),
+('pedro', '$2y$10$h2sqeV/zcKWh0.eBZvyzMeG2n6YhXW.Ntk/gc/UYr5Mk6bj2M2Yda', 1, ''),
+('pepe', '$2y$10$SR.q/N/15qFClD1d0TybReID2trM/bQTSSzRL3tBescUc9ppr9Tke', 1, ''),
+('pipo', '$2y$10$.4Z/WHjJ7qGP7gbUJBSMcecSvrqXXI4eBkC0vaFhSbKZNYdcAXVv.', 0, 'manolo'),
+('piter', '$2y$10$sCJPDS7ErVUSSYh4jYbeCOoieV0F.3uOsMWCB2qMeoaLUiXF8Q.UC', 0, ''),
+('skyrim', '$2y$10$2yRpZ1K1PX4yZK3DJ52a1OkErgZDdCWw5Gsv/4Plc6x.e36xeTyP.', 1, ''),
+('tuco', '$2y$10$N/1Rxmm79kDnZqlvXz25UutIQyVnTZdho33ShSwtCjl2IB564JhKq', 0, 'sam');
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  ADD PRIMARY KEY (`id_comentario`);
 
 --
 -- Indices de la tabla `genero`
@@ -117,16 +150,22 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `comentario`
+--
+ALTER TABLE `comentario`
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de la tabla `genero`
 --
 ALTER TABLE `genero`
-  MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id_genero` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT de la tabla `juego`
 --
 ALTER TABLE `juego`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas

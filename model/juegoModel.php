@@ -29,6 +29,12 @@ class juegoModel{
         move_uploaded_file($imagen, $target);
         return $target;
     }
+    public function borrarimagen($id){
+        
+        $imagen="";
+        $query = $this->db->prepare('UPDATE juego SET imagen= ?  WHERE id = ?');
+        $query->execute([$imagen,$id]); 
+    }
     function borarJuego($id) {
         $query = $this->db->prepare('DELETE FROM juego WHERE id = ?');
         $query->execute([$id]); 

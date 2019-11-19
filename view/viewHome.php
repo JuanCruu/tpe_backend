@@ -19,8 +19,10 @@ class viewHome{
     $this->view->showGames($tareas);
 
     }
-   public function verJuego($juego){
+   public function verJuego($juego,$sesion=null,$usuario=null){
+     $this->smarty->assign('usuario',$usuario);
         $this->smarty->assign('juego',$juego);
+        $this->smarty->assign('sesion',$sesion);
         $this->smarty->display('templates/juego.tpl');
    }
 }

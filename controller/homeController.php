@@ -34,9 +34,17 @@ class homeController{
 
     }  
     function juego($params=NULL){
+        $sesion=$this->authHelper->checkSeason();
         $id=$params[':ID'];
         $juego = $this->model->getJuego($id);
-        $this->view->verJuego($juego);
+        if($sesion){
+            $usuario=$this->userModel->getbyUsername($sesion);
+            $this->view->verJuego($juego,$sesion,$usuario);
+        }else{
+            $this->view->verJuego($juego);
+        }
+
+
         
     }
     function buscar($params=NULL){
