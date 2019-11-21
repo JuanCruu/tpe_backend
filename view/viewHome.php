@@ -13,16 +13,16 @@ class viewHome{
           $this->smarty->assign('categorias',$categorias);
           $this->smarty->assign('datos',$juegos);
         $this->smarty->display('templates/home.tpl');
-   }
-   function mostrarTareas(){
-    $tareas = $this->model->getAll();
-    $this->view->showGames($tareas);
+     }
+     public function mostrarTareas(){
+          $tareas = $this->model->getAll();
+          $this->view->showGames($tareas);
 
-    }
+     }
    public function verJuego($juego,$sesion=null,$usuario=null){
      $this->smarty->assign('usuario',$usuario);
-        $this->smarty->assign('juego',$juego);
-        $this->smarty->assign('sesion',$sesion);
-        $this->smarty->display('templates/juego.tpl');
-   }
+     $this->smarty->assign('juego',$juego);
+     $this->smarty->assign('sesion',$sesion);
+     $this->smarty->display('templates/juego.tpl');
+     }
 }

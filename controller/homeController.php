@@ -12,7 +12,9 @@ class homeController{
     private $view;
     private $authHelper;
     private $userModel;
+
     function __construct(){
+
         $this->userModel=new userModel();
         $this->model=new juegoModel();
         $this->view=new viewHome();
@@ -21,8 +23,10 @@ class homeController{
     }
     function mostrarjuegos(){
         $sesion=$this->authHelper->checkSeason();
+        
         $juegos = $this->model->getAll();
         $categorias=$this->categoriasModel->getCategorias();
+
         if($sesion){
             $usuario=$this->userModel->getbyUsername($sesion);
             $this->view->showGames($juegos,$categorias,$sesion,$usuario);
@@ -30,10 +34,11 @@ class homeController{
 
             $this->view->showGames($juegos,$categorias,$sesion);
         }
-
-
     }  
+
+
     function juego($params=NULL){
+
         $sesion=$this->authHelper->checkSeason();
         $id=$params[':ID'];
         $juego = $this->model->getJuego($id);
@@ -43,16 +48,16 @@ class homeController{
         }else{
             $this->view->verJuego($juego);
         }
-
-
-        
     }
+
     function buscar($params=NULL){
         $id=$params[':ID'];
         $juegos=$this->model->getFor($id);
         $categorias=$this->categoriasModel->getCategorias();
         $this->view->showGames($juegos,$categorias);
     }
+
+        
 
    
 

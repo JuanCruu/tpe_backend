@@ -29,7 +29,7 @@
                 <img class="imagenjuego" src="{$juego->imagen}" alt="">
             </div>
             <div>
-            
+
                 <p>
                     {$juego->descripcion}
                     <p>${$juego->precio}</p>
@@ -52,10 +52,33 @@
             <h1>{$juego->nombre}</h1>
             <div class="caja3">
                 {$juego->trailer}
+                    
+                        <input class="hidden" type="button"id="id_juego" value={$juego->id} >
+                <div >
+                {if $sesion}
+                    <form method="POST" action="api/comentario/"{$usuario->user}>
+                        <textarea name="textarea" rows="2" cols="150"></textarea>
+                        <input class="hidden" type="button"id="id_juego" name="juego" value={$juego->id} >
+
+                        <button id="btn-refresh" type="submit" class="btn btn-primary btn-sm">Comentar</button>
+                    </form>
+                {/if}
                 {include 'vue/sidebarComentarios.tpl'}
+                </div>
             </div>
+                        
+                
+                 
         </div>
         
     </div>
 </body>
 </html>
+                        
+                        
+    
+                        
+                    
+
+                
+                     

@@ -54,22 +54,22 @@ class adminController{
 
             
         }
-    }
+        }
     function borrar($params = NULL){
         $id = $params[':ID'];
         $this->modeljuegos->borarjuego($id);
         header ("Location: ../admin"); 
         
-   }
-   function editar($params = NULL){
+        }
+    function editar($params = NULL){
        $id = $params[':ID'];
         $eljuego= $this->modeljuegos->getjuego($id);
         $categorias=$this->categoriasModel->getCategorias();
           $this->view->formularioEditar($eljuego,$categorias);
 
-   }
+    }
        
-   function confirmar($params=NULL){
+    function confirmar($params=NULL){
        $id=$params[':ID'];
        if(isset($_POST['titulo'])){
            $titulo = $_POST['titulo'];
@@ -87,10 +87,10 @@ class adminController{
             $this->modeljuegos->editarJuego( $titulo,$precio,$imagen,$link,$categoria,$descripcion,$id);
             header ("Location: ../admin");
            
+        }
 
-   }
-}
-   public function borrarimagen($params=null){
+    }
+    public function borrarimagen($params=null){
         $id=$params[':ID'];
         $imagen = $this->modeljuegos->getjuego($id);
         var_dump($imagen->imagen);
@@ -99,81 +99,81 @@ class adminController{
         $this->modeljuegos->borrarimagen($id);
         header ("Location: ../juego/".$id); 
     }   
-
-
-
-  ///#categorias/////////////////////////////////////////////////////////////
-
-  function borrarCategoria($params=null){
-      $id=$params[':ID'];
-      $this->categoriasModel->borrarCategoria($id);
-      header ("Location: ../admin"); 
-  }
-  function agregarCategoria(){
-      $nombre=$_POST['categoria'];
-      $this->categoriasModel->agregarCategoria($nombre);
-      header ("Location: admin"); 
-  }
-  function editarCategoria($params=null){
-      $id=$params[':ID'];
-      $idGenero=$this->categoriasModel->getIdcategorias($id);
-      $this->view->formCategoria($idGenero);
-  }
-  function confirmarCategoria($params=null){
-      $id=$params[':ID'];
-       if(isset($_POST['titulo'])){
-           $titulo = $_POST['titulo'];
-           $this->categoriasModel->updateCategoria($id,$titulo);
-          header ("Location: ../admin");
-           
+    ///#categorias/////////////////////////////////////////////////
+  
+    function borrarCategoria($params=null){
+        $id=$params[':ID'];
+        $this->categoriasModel->borrarCategoria($id);
+        header ("Location: ../admin"); 
+      }
+    function agregarCategoria(){
+        $nombre=$_POST['categoria'];
+        $this->categoriasModel->agregarCategoria($nombre);
+        header ("Location: admin"); 
        }
-    }
-            
-    ///#usuario///////////////////////
-    public function borrarUsuario($params=null){
-      $usuario=$params[':ID'];
-      $this->usermodel->borrarUsuario($usuario);
-      header ("Location: ../admin");
-
-    }
-    public function Promover_Destituir($params=null){
+    function editarCategoria($params=null){
+        $id=$params[':ID'];
+        $idGenero=$this->categoriasModel->getIdcategorias($id);
+        $this->view->formCategoria($idGenero);
+       }
+    function confirmarCategoria($params=null){
+        $id=$params[':ID'];
+         if(isset($_POST['titulo'])){
+             $titulo = $_POST['titulo'];
+             $this->categoriasModel->updateCategoria($id,$titulo);
+            header ("Location: ../admin");
+             
+         }
+      }
+              
+      ///#usuario///////////////////////
+      public function borrarUsuario($params=null){
         $usuario=$params[':ID'];
-        
-        $privilegio;#variable la cual contendra el valor booleano que tendra el usuario (si va ser admin o dejara de serlo)
-
-        #
-        $User=$this->usermodel->getbyUsername($usuario);
-        #para no hacer dos funciones exactamente iguales con un valor diferente pense en esto como una perilla de luz.
-        if( $User->admin==1){
-            $privilegio=0;
-        }elseif($User->admin==0){
-            $privilegio=1;
-        }
-        #si el usuario era un admnistrador dejara de serlo y perdera acceso a la zona de administracion y
-        #Si era usuario se volvera admnistrador;
-        #(esto ya del vamos no es nada seguro,un administrador podria volver a todos usuarios y ya nadie podria entrar a la zona de admnistracion para sacarle.
-        # es mas hasta el mismo se podria destituir solo y ya nadie podria administrar nada...)
-        $this->usermodel->Promover_Destituir($usuario,$privilegio);
+        $this->usermodel->borrarUsuario($usuario);
         header ("Location: ../admin");
-
-    }
+  
+      }
+      public function Promover_Destituir($params=null){
+          $usuario=$params[':ID'];
+          
+          $privilegio;#variable la cual contendra el valor booleano que tendra el usuario (si va ser admin o dejara de serlo)
+  
+          #
+          $User=$this->usermodel->getbyUsername($usuario);
+          #para no hacer dos funciones exactamente iguales con un valor diferente pense en esto como una perilla de luz.
+          if( $User->admin==1){
+              $privilegio=0;
+          }elseif($User->admin==0){
+              $privilegio=1;
+          }
+          #si el usuario era un admnistrador dejara de serlo y perdera acceso a la zona de administracion y
+          #Si era usuario se volvera admnistrador;
+          #(esto ya del vamos no es nada seguro,un administrador podria volver a todos usuarios y ya nadie podria entrar a la zona de admnistracion para sacarle.
+          # es mas hasta el mismo se podria destituir solo y ya nadie podria administrar nada...)
+          $this->usermodel->Promover_Destituir($usuario,$privilegio);
+          header ("Location: ../admin");
+  
+      }
+        
+          
+  
+  
+  
+              
+          
+  
+  
+  
+             
+                  
       
-        
-
-
-
-            
-        
-
-
-
            
-                
-    
+  
+           
+  
          
-
          
+  }
 
-       
-       
-}
+
+

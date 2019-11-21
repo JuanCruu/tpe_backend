@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-11-2019 a las 23:34:38
+-- Tiempo de generación: 21-11-2019 a las 22:49:21
 -- Versión del servidor: 10.1.40-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -107,8 +107,11 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`user`, `password`, `admin`, `answer`) VALUES
+('benja', '$2y$10$HW6OAWd36n7JGulpCgxDdOHVca5Mnlp39/Eyy9Xlmr3wsF8Vxc0bK', 0, 'manolo'),
 ('juancruz', '$2y$10$F/f4jsq/v/YciPV1nn5LvORKMjqKaa4ShNuMQWdIoYVLuOIbiqw8O', 1, ''),
+('manolo', '$2y$10$Hl3xNQzUyfFxlW/htxS5qeeHRrQLD1oHEYxzaXeoPJyVEqmJi3nxK', 0, 'manolo'),
 ('maria', '$2y$10$T17.jO5KaERsDJw1SBcMw.qd8QiJxg.ZUfAEPTQr8e5eWXS9v0C4a', 0, ''),
+('mati', '$2y$10$V1.PHBF0UVNUENfYubftVe0D9U0vui3UD/46Z1zyyE4/1WVDXlQha', 0, 'manolo'),
 ('pedro', '$2y$10$h2sqeV/zcKWh0.eBZvyzMeG2n6YhXW.Ntk/gc/UYr5Mk6bj2M2Yda', 1, ''),
 ('pepe', '$2y$10$SR.q/N/15qFClD1d0TybReID2trM/bQTSSzRL3tBescUc9ppr9Tke', 1, ''),
 ('pipo', '$2y$10$.4Z/WHjJ7qGP7gbUJBSMcecSvrqXXI4eBkC0vaFhSbKZNYdcAXVv.', 0, 'manolo'),

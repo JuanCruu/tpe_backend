@@ -19,11 +19,34 @@ class ApiController{
     private function getData() {
       return json_decode($this->data);
   }
-    public function traerComentarios($params = null){
-
-      $comentarios = $this->Apimodel->AllComents();
-      $this->Apiview->response($comentarios, 200);
+    public function traerComentarios($params=[]){ 
+            
+      $comentarios = $this->Apimodel->AllComents($params[":ID"]);
+      return $this->Apiview->response($comentarios, 200);
     }
+    private function traerComentario($params=[]){ 
+            
+      $comentarios = $this->Apimodel->TheComents($params[":ID"]);
+      return $this->Apiview->response($comentarios, 200);
+    }
+
+    public function PostearComentario($params){ 
+      
+      $comentario=$_POST['textarea'];
+      $juego=$_POST['juego'];
+      
+      
+      var_dump($params,$comentario, $juego);
+
+
+      #$this->Apimodel->PostComent( $comentario,$juego,$params[":ID"]);
+      
+    }
+
+      
+    
+     
+    
 
 
     

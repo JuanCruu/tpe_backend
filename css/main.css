@@ -22,10 +22,19 @@
     justify-content: center;
 
 }
+.oculto{
+    display: none;
+}
+.comment-main-level{
+    width: 1300px;
+}
 .contenido{
     background-color: white;
     width: 100%;
     margin: 0px;
+}
+.quieto{
+    text-decoration: none;
 }
 .contenido3{
     background-color: black;
@@ -34,7 +43,13 @@
     margin-top:0px;
     border: white solid;
 }
-
+.comment-box{
+    
+    background-color: darkgray;
+    width: 80%;
+    border-color: black;
+    
+}
 
 .parrafo1{
     margin-top:0px;
@@ -46,10 +61,12 @@ a{
     color: black;
 }
 a:hover{
+    
     color: lightblue;
 }
+
 li:hover{
-    font-size: 20px;
+    color:red;
 }
 .linav:hover{
     color: lightblue;
