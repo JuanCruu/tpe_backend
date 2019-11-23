@@ -51,10 +51,15 @@
         <div class="caja2">
             <h1>{$juego->nombre}</h1>
             <div class="caja3">
+                <div>
                 {$juego->trailer}
-                    
-                        <input class="hidden" type="button"id="id_juego" value={$juego->id} >
-                <div >
+                </div>
+                
+            </div>
+            <div>
+                <input class="hidden" type="button"id="id_juego" value={$juego->id} >
+            </div>
+            <div >
                 {if $sesion}
                     <form method="POST" action="api/comentario/"{$usuario->user}>
                         <textarea name="textarea" rows="2" cols="150"></textarea>
@@ -64,9 +69,7 @@
                     </form>
                 {/if}
                 {include 'vue/sidebarComentarios.tpl'}
-                </div>
-            </div>
-                        
+            </div>        
                 
                  
         </div>

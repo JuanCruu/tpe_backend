@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-11-2019 a las 22:49:21
+-- Tiempo de generación: 23-11-2019 a las 01:41:27
 -- Versión del servidor: 10.1.40-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -40,7 +40,9 @@ CREATE TABLE `comentario` (
 --
 
 INSERT INTO `comentario` (`id_comentario`, `comentario`, `id_juego_fk`, `id_usuario`) VALUES
-(1, 'primer comentario hecho por api', 1, 'pepe');
+(4, 'sefsefsefsef', 1, 'juan'),
+(6, 'adsadaasdsd', 1, 'pepito'),
+(7, 'adsadaasdsd', 2, 'pepito');
 
 -- --------------------------------------------------------
 
@@ -84,9 +86,9 @@ CREATE TABLE `juego` (
 --
 
 INSERT INTO `juego` (`id`, `nombre`, `descripcion`, `precio`, `imagen`, `trailer`, `id_genero_fk`) VALUES
-(1, 'michi 1', '', 0, 'img/juego/5dd4329667acf.jpg', '', 69),
+(1, 'michi 1', 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui', 350, 'img/juego/5dd87e8f5c43c.jpg', '<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/hHW1oY26kxQ\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>', 66),
 (2, 'sapito 4', '', 0, 'img/juego/5dd432a25a2ba.jpg', '', 68),
-(3, 'esto no es un perro', '', 0, 'img/juego/5dd432b37b1fe.jpg', '', 70),
+(3, 'esto no es un perro 2', '', 0, 'img/juego/5dd432b37b1fe.jpg', '', 66),
 (4, 'nuevo juego', '', 1000, 'img/juego/5dd432c217f69.jpg', '', 66);
 
 -- --------------------------------------------------------
@@ -107,6 +109,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`user`, `password`, `admin`, `answer`) VALUES
+('Mangoya', '$2y$10$v14Js0zPTcsHhqjZU7Fi4u4rc2FThrsXgBqA1NDqZlgu7wKtRyFGy', 0, 'Manolo'),
 ('benja', '$2y$10$HW6OAWd36n7JGulpCgxDdOHVca5Mnlp39/Eyy9Xlmr3wsF8Vxc0bK', 0, 'manolo'),
 ('juancruz', '$2y$10$F/f4jsq/v/YciPV1nn5LvORKMjqKaa4ShNuMQWdIoYVLuOIbiqw8O', 1, ''),
 ('manolo', '$2y$10$Hl3xNQzUyfFxlW/htxS5qeeHRrQLD1oHEYxzaXeoPJyVEqmJi3nxK', 0, 'manolo'),
@@ -156,7 +159,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `genero`

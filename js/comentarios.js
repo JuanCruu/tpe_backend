@@ -26,6 +26,9 @@ function allComents() {
         })
         .catch(error => console.log(error));
     }
+
+    
+
     allComents();
             
             

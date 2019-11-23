@@ -18,8 +18,13 @@
             $query->execute([$comentario,$juego,$id_usuario]);
             return $query->fetchAll(PDO::FETCH_OBJ);
 
-            
         }
+        public function DeleteComentario($id){
+            $query = $this->db3->prepare('DELETE FROM comentario where id_comentario=?');
+            $query->execute([$id]);
+            return  $query->fetch(PDO::FETCH_OBJ);
+        }
+            
             
           
     
