@@ -58,19 +58,71 @@
                                 <label for="exampleFormControlTextarea1">descripcion</label>
                                 <textarea class="form-control" id="descripcion" name="descripcion" rows="3"></textarea>
                             </div>
+                           
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
                     </div>
                     <div>
-                     <h1>lista de juegos</h1>
+                 
+                    </div>
+                    <div>
+                        
+                                            
+                </div>
+                </div>
+                <div>
+                    <h1>Add Categoria</h1>
+                    <form method="post" action="agregarCategoria" >
+                         <div class="form-group">
+                                <label >nombre</label>
+                                <input type="text" class="form-control" id="categoria" name="categoria">
+                                <button type="submit" class="btn btn-primary">Crear</button>
+                        </div>   
+                            
+                                
+                    </form>
+                    <h1>Categorias</h1>
+                    <ul class="list-group">
+                        {foreach $categorias as $genero}
+                            <li class="list-group-item">
+                                <h5>{$genero->nombre}</h5><a href="borrarCategoria/{$genero->id_genero}">/borrar/<a>
+                                    <a href="editarCategoria/{$genero->id_genero}">editar </a></li> 
+                            </li> 
+                        {/foreach}
+                    </ul> 
+                    
+                </div>
+                <div>
+                        <h1>_|Capturas|_</h1>
+                    <form action="subircapturas" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                                <label >id de juego</label>
+                                <select class="form-control" id="Capturas" name="Capturas">
+                                    {foreach $datos as $juego}
+                                        <option value={$juego->id}>{$juego->nombre}</option>    
+                                    {/foreach}
+                                </select>
+                                  
+                                <label for="exampleFormControlInput1">Capturas</label>
+                             
+                                    
+                            
+                                
+                                        
+                            
+                            <input type="file" name="input_name" id="imageToUpload2" multiple>
+                            <button type="submit" class="btn btn-primary">subir</button>
+                        </div>
+                    </form>
+                    <h1>Lista de juegos</h1>
                     <ul class="list-group">
                         {foreach $datos as $juego}
                             <li class="list-group-item"><h5>{$juego->nombre}</h5><a href="borrar/{$juego->id}">/borrar/<a>
                                 <a href="editar/{$juego->id}">editar {$juego->id}</a></li> 
                         {/foreach}
-                    </ul>  
-                    </div>
-                    <div>
+                    </ul> 
+                </div>
+                <div>
                         <h1>Usuarios</h1>
                         <ul class="list-group">
                                 {foreach $usuarios as $usuario}
@@ -89,30 +141,6 @@
                                 {/foreach}
 
                         </ul>
-                                            
-                </div>
-                </div>
-                <div>
-                    <h1>Add Categoria</h1>
-                    <form method="post" action="agregarCategoria" >
-                         <div class="form-group">
-                                <label >nombre</label>
-                                <input type="text" class="form-control" id="categoria" name="categoria">
-                        </div>   
-                            
-                     <button type="submit" class="btn btn-primary">Crear</button>
-                                
-                    </form>
-                    <h1>_|_Categorias_|_</h1>
-                    <ul class="list-group">
-                        {foreach $categorias as $genero}
-                            <li class="list-group-item">
-                                <h5>{$genero->nombre}</h5><a href="borrarCategoria/{$genero->id_genero}">/borrar/<a>
-                                    <a href="editarCategoria/{$genero->id_genero}">editar </a></li> 
-                            </li> 
-                        {/foreach}
-                    </ul> 
-                    
                 </div>
                 
             </div>

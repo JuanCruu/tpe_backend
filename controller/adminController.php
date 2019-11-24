@@ -47,6 +47,8 @@ class adminController{
             || $_FILES['input_name']['type'] == "image/png" ) {
             
                 $imagen=$_FILES['input_name']['tmp_name'];
+                
+                
                 $this->modeljuegos->crear( $titulo,$descripcion,$precio,$categoria,$imagen,$link);
                 header ("Location: admin");
             }
@@ -99,6 +101,17 @@ class adminController{
         $this->modeljuegos->borrarimagen($id);
         header ("Location: ../juego/".$id); 
     }   
+    public function agreagarCapturas(){
+        if($_FILES['input_name']['type'] == "image/jpg" || $_FILES['input_name']['type'] == "image/jpeg" 
+        || $_FILES['input_name']['type'] == "image/png" ) {
+
+            $capturas=$_FILES['input_name']['tmp_name'];
+            
+
+        }
+            
+
+    }
     ///#categorias/////////////////////////////////////////////////
   
     function borrarCategoria($params=null){
