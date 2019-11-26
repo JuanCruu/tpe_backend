@@ -295,12 +295,18 @@ label{
     height: 290px;
 }
 
-
+.tamanio{
+    height: 400px;
+    overflow: scroll;
+}
 .contenedorhijo{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     background-color:rgb(124, 124, 124);
+}
+.hidden{
+    visibility: none;
 }
 .main{
    width: 100%;

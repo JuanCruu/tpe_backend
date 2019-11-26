@@ -1,6 +1,6 @@
 <?php
 require_once('ApiModel.php');
-include_once('ApiJSON.php');
+include_once('JSONView.php');
 
 
 
@@ -8,8 +8,8 @@ class ApiController{
 
   private $Apimodel;
   private $Apiview;
-
   private $data;
+
   public function __construct() {
     $this->Apimodel = new ApiModel();
     $this->Apiview = new JSONView();
@@ -42,6 +42,7 @@ public function BorrarComentario($params=null){
 public function PostearComentario($param=null){
   
   $data=$this->Apiview->getData();
+
     $comentario=$data->comentario;
     $juego=$data->id_juego_fk;
     $usuario=$data->id_usuario;

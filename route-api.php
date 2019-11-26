@@ -1,6 +1,6 @@
 <?php
  require_once('api/ApiController.php');
- require_once('api/ApiJSON.php');
+ require_once('api/JSONView.php');
  require_once('Router.php');
  
  
@@ -12,14 +12,15 @@
  $r=new Router();
  
  $r->addRoute("Comentario/:ID","GET","ApiController","traerComentarios");
- $r->addRoute("Comentario/:ID","DELETE","ApiController","BorrarComentario");
- 
  $r->addRoute("Comentario","POST","ApiController","PostearComentario");
+ 
+ $r->addRoute("Comentario/:ID","DELETE","ApiController","BorrarComentario");
 
- 
- 
- 
  $r->route($_GET['resource'], $_SERVER['REQUEST_METHOD']); 
+ 
+ 
+ 
+ 
 
  
  

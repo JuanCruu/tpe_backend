@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-11-2019 a las 17:07:36
+-- Tiempo de generación: 26-11-2019 a las 03:49:39
 -- Versión del servidor: 10.1.40-MariaDB
 -- Versión de PHP: 7.3.5
 
@@ -42,7 +42,14 @@ CREATE TABLE `comentario` (
 INSERT INTO `comentario` (`id_comentario`, `comentario`, `id_juego_fk`, `id_usuario`) VALUES
 (4, 'sefsefsefsef', 1, 'juan'),
 (6, 'adsadaasdsd', 1, 'pepito'),
-(7, 'adsadaasdsd', 2, 'pepito');
+(7, 'adsadaasdsd', 2, 'pepito'),
+(8, 'nuevo comentario', 1, 'benja'),
+(9, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 1, 'pepe'),
+(10, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 1, 'pepe'),
+(11, 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', 1, 'pepe'),
+(12, 'elcomentario', 0, 'usuario'),
+(13, 'aeeeeeaaa', 1, 'pepe'),
+(14, 'aeeeeeaaa', 1, 'pepe');
 
 -- --------------------------------------------------------
 
@@ -163,7 +170,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `comentario`
 --
 ALTER TABLE `comentario`
-  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_comentario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `genero`

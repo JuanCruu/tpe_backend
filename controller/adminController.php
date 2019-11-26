@@ -102,16 +102,23 @@ class adminController{
         header ("Location: ../juego/".$id); 
     }   
     public function agreagarCapturas(){
-        if($_FILES['input_name']['type'] == "image/jpg" || $_FILES['input_name']['type'] == "image/jpeg" 
-        || $_FILES['input_name']['type'] == "image/png" ) {
-
-            $capturas=$_FILES['input_name']['tmp_name'];
+        
+        if($_FILES['input_name']['type'] == "image/jpg" ||
+         $_FILES['input_name']['type'] == "image/jpeg" ||
+          $_FILES['input_name']['type'] == "image/png" ) {
             
+            $capturas=$_FILES['input_name']['tmp_name'];
+    
+            foreach($_FILES["input_name"]['tmp_name'] as $key => $tmp_name){
+                echo "sdasd";
+            }
 
         }
+    }   
+
+        
             
 
-    }
     ///#categorias/////////////////////////////////////////////////
   
     function borrarCategoria($params=null){
