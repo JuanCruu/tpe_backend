@@ -51,11 +51,16 @@ class adminController{
                 
                 $this->modeljuegos->crear( $titulo,$descripcion,$precio,$categoria,$imagen,$link);
                 header ("Location: admin");
+            }else{
+                #la imagen es un campo obligatorio
+                header ("Location: admin");
+                die();
+
             }
 
+        }
 
             
-        }
         }
     function borrar($params = NULL){
         $id = $params[':ID'];
@@ -108,6 +113,7 @@ class adminController{
           $_FILES['input_name']['type'] == "image/png" ) {
             
             $capturas=$_FILES['input_name']['tmp_name'];
+            var_dump($capturas);
     
             foreach($_FILES["input_name"]['tmp_name'] as $key => $tmp_name){
                 echo "sdasd";

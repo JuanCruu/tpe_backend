@@ -13,9 +13,9 @@
            return $query->fetchAll(PDO::FETCH_OBJ);
             
         }
-        public function PostComent($comentario,$juego,$id_usuario){
-            $query = $this->db3->prepare('INSERT INTO comentario (comentario, id_juego_fk, id_usuario) VALUE(?,?,?)');
-            $query->execute([$comentario,$juego,$id_usuario]);
+        public function PostComent($comentario,$juego,$id_usuario,$puntaje){
+            $query = $this->db3->prepare('INSERT INTO comentario (comentario, id_juego_fk, id_usuario, puntaje) VALUE(?,?,?,?)');
+            $query->execute([$comentario,$juego,$id_usuario,$puntaje]);
             return $query->fetchAll(PDO::FETCH_OBJ);
 
         }

@@ -18,11 +18,16 @@ class juegoModel{
     }
     public function crear( $titulo,$descripcion,$precio,$categoria,$imagen=null,$link){
         $pathImg = null;
-        if ($imagen)
-        $pathImg = $this->subirImagen($imagen);
+        if ($imagen){
+            $pathImg = $this->subirImagen($imagen);
+            $query = $this->db->prepare('INSERT INTO juego(nombre, descripcion, precio, imagen, trailer, id_genero_fk) VALUE(?,?,?,?,?,?)');
+            $query->execute([ $titulo,$descripcion,$precio,$pathImg,$link,$categoria]);
+        }else{
+            $query = $this->db->prepare('INSERT INTO juego(nombre, descripcion, precio, trailer, id_genero_fk) VALUE(?,?,?,?,?)');
+            $query->execute([ $titulo,$descripcion,$precio,$link,$categoria]);
+        }
 
-        $query = $this->db->prepare('INSERT INTO juego(nombre, descripcion, precio, imagen, trailer, id_genero_fk) VALUE(?,?,?,?,?,?)');
-        $query->execute([ $titulo,$descripcion,$precio,$pathImg,$link,$categoria]);
+
     }
     private function subirImagen($imagen){
         $target = 'img/juego/' . uniqid() . '.jpg';

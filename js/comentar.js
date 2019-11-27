@@ -12,11 +12,15 @@ let app2 = new Vue({
             let  comentario=document.querySelector('#message').value;
             let juego=document.querySelector('#id_juego').value;
             let usuario=document.getElementsByTagName("input")[0].value;
+            let puntaje=document.querySelector('#puntaje').value;
+           console.log(puntaje);
             
             let coment={
                 "comentario":comentario,
                  "id_juego_fk":juego,
-                 "id_usuario":usuario
+                 "id_usuario":usuario,
+                 "puntaje":puntaje
+
             };
             ////////////////////////////////////
             fetch('api/Comentario', {

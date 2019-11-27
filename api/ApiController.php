@@ -46,8 +46,10 @@ public function PostearComentario($param=null){
     $comentario=$data->comentario;
     $juego=$data->id_juego_fk;
     $usuario=$data->id_usuario;
+    $puntaje=$data->puntaje;
+    
 
-  $envio=$this->Apimodel->PostComent($comentario,$juego,$usuario);
+  $envio=$this->Apimodel->PostComent($comentario,$juego,$usuario,$puntaje);
   if($envio){
     return $this->Apiview->responce($envio,200);
   }

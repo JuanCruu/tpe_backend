@@ -31,7 +31,7 @@
     $r->addRoute("borrar/:ID", "GET", "adminController", "borrar");
     $r->addRoute("confirmar/:ID", "POST", "adminController", "confirmar");
     $r->addRoute("borrarimagen/:ID", "GET", "adminController", "borrarimagen");
-    $r->addRoute("subircapturas","POST","adminController","agreagarCapturas");
+    $r->addRoute("subircapturas","POST","adminController","agreagarCapturas");#no lo termine
 
     #admin/categoria
     $r->addRoute("borrarCategoria/:ID", "GET", "adminController", "borrarCategoria");

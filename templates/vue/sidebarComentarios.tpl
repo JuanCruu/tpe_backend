@@ -9,22 +9,27 @@
                 </div>
 
                 <div v-if="loading" >
-                 
+                    <h6>
+                        Puntuacion del juego es : {{promedio}}
+                    </h6>                 
                     <ul  v-for="comentario in comentarios" >
                         <li class="quieto">
                         
                             <div class="comment-main-level">
                                     <div class="comment-box">
                                         <div class="comment-head">
-                                        <h6 class="comment-name"><p>{{comentario.id_usuario}}</p></h6>
+                                            <h6 class="comment-name"><p>{{comentario.id_usuario}}</p></h6><span>puntuacion: {{comentario.puntaje}}</span>
+                                        </div>
                                     </div>
+                                        
                                     <div class="comment-content">
                                         {{comentario.comentario}} 
                                     </div>
-                                    <div>
-                                    {{comentario.id_comentario}}
-
-                                      </div>
+                                    <div >
+                                      
+                                        
+                                    <button id="boton_borrar" class="btn btn-primary" @click="(event)=>{borrar(event,comentario.id_comentario)} ">borrar</button>
+                                    </div>
                                 </div>
                             </div>
                             <div>
