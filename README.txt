@@ -1,6 +1,7 @@
-
+proyecto para facultad
+PD:soy conciente del nombre de los commit
 ////////////////////////////
-Tienda virtual en la que no se puede comprar nada
+Tienda virtual 
 /////////////////////
 
 
